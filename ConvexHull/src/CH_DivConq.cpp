@@ -29,11 +29,8 @@ int main(int argc, char *argv[]) {
 PointList convexHull(PointList &input) {
     xAxisSort(input);
     PointList uHull = upperConvexHull(input, 0, input.size()-1);
-    log("upper hull done");
     PointList lHull = lowerConvexHull(input, 0, input.size()-1);
-    log("lower hull done");
     PointList output = combineHulls(uHull, lHull);
-    log("full hull done");
     return output;
 }
 
