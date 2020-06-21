@@ -14,14 +14,20 @@ using namespace std;
 class Vertex {
     public:
         long x, y; // coordinates
+        unsigned long tag; // a tag attribute to hold any additional info
+        unsigned long parent; // to be used in cycle detection
         HalfEdge *rep; // rep->tail == this
-        Vertex() {}
-        Vertex(long X, long Y): x(X), y(Y) {}
-        Vertex(const Vertex &p): x(p.x), y(p.y) {}
+        Vertex(): tag(0) {}
+        Vertex(long X, long Y): x(X), y(Y), tag(0) {}
+        Vertex(const Vertex &p): x(p.x), y(p.y), tag(p.tag), parent(p.parent) {}
         ~Vertex() {}
 
         bool operator==(const Vertex &v) {
             return (x == v.x) && (y == v.y);
+        }
+
+        bool operator!=(const Vertex &v) {
+            return !operator==(v);
         }
 
         bool operator<(const Vertex &v) const {
@@ -42,13 +48,24 @@ class Edge {
     public:
         Vertex src, dst;
         Edge() {}
+
         Edge(Vertex &source, Vertex &destination): 
             src(source), dst(destination) {}
+
         Edge(long x1, long y1, long x2, long y2) {
             src = Vertex(x1, y1);
             dst = Vertex(x2, y2);
         }
+
         ~Edge() {}
+
+        bool operator==(const Edge &e) {
+            return src == e.src && dst == e.dst;
+        }
+
+        bool operator!=(const Edge &e) {
+            return !operator==(e);
+        }
 };
 
 ostream& operator<<(ostream &os, const Edge &e) {

@@ -1,33 +1,12 @@
-#ifndef __EARCLIPPING_H__
-#define __EARCLIPPING_H__
+#ifndef __EARCLIPPINGTRIANGULATION_H__
+#define __EARCLIPPINGTRIANGULATION_H__
 
-#include <cmath>
 #include <vector>
 
 #include "Geometry.h"
+#include "Tools.h"
 
-double det(const Vertex &u, const Vertex &v) {
-    return u.x * v.y - u.y * v.x;
-}
-
-double dist(Vertex const &u, Vertex const &v) {
-    return sqrt(pow((v.x - u.x), 2) + pow((v.y - u.y), 2));
-}
-
-bool pointInTriangle(Vertex a, Vertex b, Vertex c, Vertex p) {
-    // check if point p is within the triangle abc: the point must be at the left
-    // of each edge
-    Vertex ab = b - a;
-    Vertex bc = c - b;
-    Vertex ca = a - c;
-
-    if (det(ab, p - a) > 0 && det(bc, p - b) > 0 && det(ca, p - c) > 0)
-        return true;
-    else
-        return false;
-}
-
-vector<Triangle> triangulate(vector<Vertex> points) { // the ear clipping algorithm
+vector<Triangle> earClippingTriangulate(vector<Vertex> points) { // the ear clipping algorithm
     vector<Triangle> triangles;
     vector<Vertex> initialPoints = points;
 
@@ -74,6 +53,5 @@ vector<Triangle> triangulate(vector<Vertex> points) { // the ear clipping algori
     }
     return triangles ; // we return the triangle array
 }
-
 
 #endif

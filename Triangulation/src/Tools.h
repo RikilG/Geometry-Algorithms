@@ -1,6 +1,7 @@
 #ifndef __TOOLS_H__
 #define __TOOLS_H__
 
+#include <cmath>
 #include <vector>
 #include <fstream>
 #include <sstream>
@@ -8,9 +9,30 @@
 
 using namespace std;
 
+double det(const Vertex &u, const Vertex &v) { // cross
+    return u.x * v.y - u.y * v.x;
+}
+
+double dist(Vertex const &u, Vertex const &v) {
+    return sqrt(pow((v.x - u.x), 2) + pow((v.y - u.y), 2));
+}
+
+bool pointInTriangle(Vertex a, Vertex b, Vertex c, Vertex p) {
+    // check if point p is within the triangle abc: the point must be at the left
+    // of each edge
+    Vertex ab = b - a;
+    Vertex bc = c - b;
+    Vertex ca = a - c;
+
+    if (det(ab, p - a) > 0 && det(bc, p - b) > 0 && det(ca, p - c) > 0)
+        return true;
+    else
+        return false;
+}
+
 int orient(const Vertex &p, const Vertex &q, const Vertex &r) {
     // counter clock wise: +ve: upward direction: +ve orient
-    int x = ((q.x*r.y-r.x*q.y) - p.x*(r.y-q.y) + p.y*(r.x-q.x));
+    long x = ((q.x*r.y-r.x*q.y) - p.x*(r.y-q.y) + p.y*(r.x-q.x));
     if (x == 0) return 0;
     else return (x>0) ? 1 : -1 ;
 }
