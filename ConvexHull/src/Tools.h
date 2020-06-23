@@ -18,6 +18,13 @@
 
 using namespace std;
 
+/**
+ * \brief To check the orientation of the given 3 points
+ * \param p Point object
+ * \param q Point object
+ * \param r Point object
+ * \return Orientation: -1 if clockwise, +1 if counter-clockwise and 0 if colinear
+ */
 int orient(const Point &p, const Point &q, const Point &r) {
     // counter clock wise: +ve: upward direction: +ve orient
     long long x = ((q.x*(long long)r.y-r.x*(long long)q.y) - p.x*(long long)(r.y-q.y) + p.y*(long long)(r.x-q.x));
@@ -29,6 +36,12 @@ void log(string s) {
     cout << s << "\n";
 }
 
+/**
+ * \brief Read input points from stdin or from file (if provided in args)
+ * \param argc no of command-line arguments
+ * \param argv command-line arguments
+ * \return PointList object containing the input points in the given order
+ */
 PointList readPoints(int argc, char *argv[]) {
     string current_exec_name = argv[0]; // Name of the current exec program
     vector<string> all_args;

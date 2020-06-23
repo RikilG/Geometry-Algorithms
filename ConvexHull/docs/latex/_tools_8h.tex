@@ -1,0 +1,72 @@
+\hypertarget{_tools_8h}{}\doxysection{Tools.\+h File Reference}
+\label{_tools_8h}\index{Tools.h@{Tools.h}}
+
+
+The main purpose of this file is to provide a data input function.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}Point.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Point\+List.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_tools_8h_a5bf56f9934cdc4fc902b4126b0a32e72}{orient}} (const \mbox{\hyperlink{class_point}{Point}} \&p, const \mbox{\hyperlink{class_point}{Point}} \&q, const \mbox{\hyperlink{class_point}{Point}} \&r)
+\begin{DoxyCompactList}\small\item\em To check the orientation of the given 3 points. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_tools_8h_a1063abcc378c651a34ca0940c0a43645}\label{_tools_8h_a1063abcc378c651a34ca0940c0a43645}} 
+void {\bfseries log} (string s)
+\item 
+\mbox{\hyperlink{class_point_list}{Point\+List}} \mbox{\hyperlink{_tools_8h_a6142db8dfb279fbcb8654798f8ae46b4}{read\+Points}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Read input points from stdin or from file (if provided in args) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main purpose of this file is to provide a data input function. 
+
+This file provides the \mbox{\hyperlink{_tools_8h_a6142db8dfb279fbcb8654798f8ae46b4}{read\+Points()}} function which helps to read file and take input from it. In case any file is not provided, It tries to take input from the user via stdin. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_tools_8h_a5bf56f9934cdc4fc902b4126b0a32e72}\label{_tools_8h_a5bf56f9934cdc4fc902b4126b0a32e72}} 
+\index{Tools.h@{Tools.h}!orient@{orient}}
+\index{orient@{orient}!Tools.h@{Tools.h}}
+\doxysubsubsection{\texorpdfstring{orient()}{orient()}}
+{\footnotesize\ttfamily int orient (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{p,  }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{q,  }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{r }\end{DoxyParamCaption})}
+
+
+
+To check the orientation of the given 3 points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \mbox{\hyperlink{class_point}{Point}} object \\
+\hline
+{\em q} & \mbox{\hyperlink{class_point}{Point}} object \\
+\hline
+{\em r} & \mbox{\hyperlink{class_point}{Point}} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Orientation\+: -\/1 if clockwise, +1 if counter-\/clockwise and 0 if colinear 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_tools_8h_a6142db8dfb279fbcb8654798f8ae46b4}\label{_tools_8h_a6142db8dfb279fbcb8654798f8ae46b4}} 
+\index{Tools.h@{Tools.h}!readPoints@{readPoints}}
+\index{readPoints@{readPoints}!Tools.h@{Tools.h}}
+\doxysubsubsection{\texorpdfstring{readPoints()}{readPoints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point_list}{Point\+List}} read\+Points (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Read input points from stdin or from file (if provided in args) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & no of command-\/line arguments \\
+\hline
+{\em argv} & command-\/line arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_point_list}{Point\+List}} object containing the input points in the given order 
+\end{DoxyReturn}

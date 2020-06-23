@@ -1,0 +1,44 @@
+\hypertarget{index_Algorithm}{}\doxysection{Algorithm}\label{index_Algorithm}
+This algorithm deals with finding convex hull over the points given in the input. ~\newline
+ {\bfseries{How it works}}~\newline
+ A simple overview of the algorithm\+: ~\newline
+ Step 1\+: Recursively compute the upper hull ~\newline
+ Step 2\+: Recursively compute the lower hull ~\newline
+ Step 3\+: Combine both the hulls and return the output ~\newline
+
+
+\DoxyHorRuler{0}
+ Steps to Compile and Run \+: ~\newline
+ 1) {\itshape cd} into the src directory ~\newline
+ 2) Run {\itshape g++ \mbox{\hyperlink{main_8cpp}{main.\+cpp}}} which generates an executable called {\itshape a.\+out} in the same directory ~\newline
+ 3) Run the executable using {\itshape ./a.out} (on linux) ~\newline
+ 3.\+1) The executable takes a dataset from command line argument. For example, to use an existing dataset, run {\itshape ./a.out ../datasets/edge.txt} ~\newline
+ 3.\+2) If no command-\/line argument is given, it takes input from the shell directly (stdin) ~\newline
+
+
+~\newline
+ Performance of the algorithm is documented in the report~\newline
+\hypertarget{index_Input}{}\doxysubsection{Input}\label{index_Input}
+Input is given as follows\+:~\newline
+
+\begin{DoxyItemize}
+\item Input can be given both from file (via command-\/line args) or stdin ~\newline
+
+\item First line must contain the no of Points to be taken as input by the program. ~\newline
+
+\item Each of next line must contain 2 integers, space seperated denoting the (x, y) coordinates of each point. ~\newline
+
+\item Each coordinate must be of integer type in the range -\/10$^\wedge$6 to 10$^\wedge$6. ~\newline
+
+\item Number of coordinates must be less than 1 Billion. ~\newline
+
+\end{DoxyItemize}\hypertarget{index_Output}{}\doxysubsection{Output}\label{index_Output}
+
+\begin{DoxyItemize}
+\item Each line of output gives the coordinates present on the convex hull in clockwise order
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{index_Author}{}\doxysubsection{Author}\label{index_Author}
+The algorithm is implemented and documented by {\bfseries{Rikil Gajarla (2017A7\+P\+S0202H)}}. \DoxyHorRuler{0}
+ 

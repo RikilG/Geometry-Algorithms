@@ -9,8 +9,8 @@ except:
     using_numpy = False
     import random
 
-MIN = -1e5
-MAX = 1e5
+MIN = -1e6
+MAX = 1e6
 
 def main():
     print("File will be stored in datasets directory with filename as (no-of-points).txt")
@@ -25,11 +25,11 @@ def main():
     while len(points) < n:
         x = random.randint(MIN, MAX)
         while x in xs:
-            if using_numpy: x = random.normal(0, 1000)
+            if using_numpy: x = random.normal(0, MAX/100)
             else: x = random.randint(MIN, MAX)
         y = random.randint(MIN, MAX)
         while y in ys:
-            if using_numpy: y = random.normal(0, 1000)
+            if using_numpy: y = random.normal(0, MAX/100)
             else: y = random.randint(MIN, MAX)
         points.add((x, y))
     

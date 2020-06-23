@@ -1,0 +1,196 @@
+\hypertarget{_convex_hull_8h}{}\doxysection{Convex\+Hull.\+h File Reference}
+\label{_convex_hull_8h}\index{ConvexHull.h@{ConvexHull.h}}
+
+
+This file contains the main Convex Hull algorithm.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include \char`\"{}Point.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Tools.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Point\+List.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_convex_hull_8h_a6b7caa011d7cf7bb00b12feb24a60192}{x\+Point\+Comparator}} (const \mbox{\hyperlink{class_point}{Point}} \&a, const \mbox{\hyperlink{class_point}{Point}} \&b)
+\begin{DoxyCompactList}\small\item\em comparator function used to compare x coordinates while sorting \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_convex_hull_8h_a72d95f7d7cc25bb020d3773e260822fb}{x\+Axis\+Sort}} (\mbox{\hyperlink{class_point_list}{Point\+List}} \&input)
+\begin{DoxyCompactList}\small\item\em function to sort given list of points in increasing order of x coordinate \end{DoxyCompactList}\item 
+pair$<$ long long, long long $>$ \mbox{\hyperlink{_convex_hull_8h_a843829a6f32573c0d5778b7c3f68c1fc}{upper\+Tangent}} (\mbox{\hyperlink{class_point_list}{Point\+List}} \&l\+Hull, \mbox{\hyperlink{class_point_list}{Point\+List}} \&r\+Hull)
+\begin{DoxyCompactList}\small\item\em compute the upper tangent for the given left hull and right hull \end{DoxyCompactList}\item 
+pair$<$ long long, long long $>$ \mbox{\hyperlink{_convex_hull_8h_aea98b9fec809f226f9405b078118c38d}{lower\+Tangent}} (\mbox{\hyperlink{class_point_list}{Point\+List}} \&l\+Hull, \mbox{\hyperlink{class_point_list}{Point\+List}} \&r\+Hull)
+\begin{DoxyCompactList}\small\item\em compute the lower tangent for the given left hull and right hull \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point_list}{Point\+List}} \mbox{\hyperlink{_convex_hull_8h_ab1a4a9f994050f920441f9dcbd6fe562}{combine\+Hulls}} (\mbox{\hyperlink{class_point_list}{Point\+List}} \&u\+Hull, \mbox{\hyperlink{class_point_list}{Point\+List}} \&l\+Hull)
+\begin{DoxyCompactList}\small\item\em Function to combine the upper hull and the lower hull. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point_list}{Point\+List}} \mbox{\hyperlink{_convex_hull_8h_a96eb851f8cc96dd279ef55d7e6e7a598}{upper\+Convex\+Hull}} (\mbox{\hyperlink{class_point_list}{Point\+List}} \&input, int start, int end)
+\begin{DoxyCompactList}\small\item\em Recursive function to compute the upper hull of the left half and right half points then merge them with upper tangent. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point_list}{Point\+List}} \mbox{\hyperlink{_convex_hull_8h_a4de6598ea333cf8e5c2122130ff860da}{lower\+Convex\+Hull}} (\mbox{\hyperlink{class_point_list}{Point\+List}} \&input, int start, int end)
+\begin{DoxyCompactList}\small\item\em Recursive function to compute the lower hull of the left half and right half points then merge them with lower tangent. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point_list}{Point\+List}} \mbox{\hyperlink{_convex_hull_8h_ac8e05f3e52bb52c8e6264edd7257bf3f}{convex\+Hull}} (\mbox{\hyperlink{class_point_list}{Point\+List}} \&input)
+\begin{DoxyCompactList}\small\item\em driver function which computes upper hull, lower hull and then combines them \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the main Convex Hull algorithm. 
+
+This header file (\mbox{\hyperlink{_convex_hull_8h}{Convex\+Hull.\+h}}) file consists of main \mbox{\hyperlink{_convex_hull_8h_ac8e05f3e52bb52c8e6264edd7257bf3f}{convex\+Hull()}} function along with it\textquotesingle{}s helper functions for calculating upper and lower tangents. This file also depends on these headers\+: \mbox{\hyperlink{_point_8h}{Point.\+h}}, \mbox{\hyperlink{_tools_8h}{Tools.\+h}} and \mbox{\hyperlink{_point_list_8h}{Point\+List.\+h}} 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_convex_hull_8h_ab1a4a9f994050f920441f9dcbd6fe562}\label{_convex_hull_8h_ab1a4a9f994050f920441f9dcbd6fe562}} 
+\index{ConvexHull.h@{ConvexHull.h}!combineHulls@{combineHulls}}
+\index{combineHulls@{combineHulls}!ConvexHull.h@{ConvexHull.h}}
+\doxysubsubsection{\texorpdfstring{combineHulls()}{combineHulls()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point_list}{Point\+List}} combine\+Hulls (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point_list}{Point\+List}} \&}]{u\+Hull,  }\item[{\mbox{\hyperlink{class_point_list}{Point\+List}} \&}]{l\+Hull }\end{DoxyParamCaption})}
+
+
+
+Function to combine the upper hull and the lower hull. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u\+Hull} & \mbox{\hyperlink{class_point_list}{Point\+List}} object with points of upper hull in clockwise order \\
+\hline
+{\em l\+Hull} & \mbox{\hyperlink{class_point_list}{Point\+List}} object with points of lower hull in clockwise order \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_point_list}{Point\+List}} object with the final list of points present on the complete convex hull in clockwise order 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_convex_hull_8h_ac8e05f3e52bb52c8e6264edd7257bf3f}\label{_convex_hull_8h_ac8e05f3e52bb52c8e6264edd7257bf3f}} 
+\index{ConvexHull.h@{ConvexHull.h}!convexHull@{convexHull}}
+\index{convexHull@{convexHull}!ConvexHull.h@{ConvexHull.h}}
+\doxysubsubsection{\texorpdfstring{convexHull()}{convexHull()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point_list}{Point\+List}} convex\+Hull (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point_list}{Point\+List}} \&}]{input }\end{DoxyParamCaption})}
+
+
+
+driver function which computes upper hull, lower hull and then combines them 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input points given by user over which convex hull is computed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Points present on the convex hull of given points in clockwise order 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_convex_hull_8h_a4de6598ea333cf8e5c2122130ff860da}\label{_convex_hull_8h_a4de6598ea333cf8e5c2122130ff860da}} 
+\index{ConvexHull.h@{ConvexHull.h}!lowerConvexHull@{lowerConvexHull}}
+\index{lowerConvexHull@{lowerConvexHull}!ConvexHull.h@{ConvexHull.h}}
+\doxysubsubsection{\texorpdfstring{lowerConvexHull()}{lowerConvexHull()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point_list}{Point\+List}} lower\+Convex\+Hull (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point_list}{Point\+List}} \&}]{input,  }\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})}
+
+
+
+Recursive function to compute the lower hull of the left half and right half points then merge them with lower tangent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input points which are sorted w.\+r.\+t x coordinate \\
+\hline
+{\em start} & start index of interval over which lower hull is computed \\
+\hline
+{\em end} & ending index of interval over which lower hull is computed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_point_list}{Point\+List}} with all Points present on lower hull of given interval (in clockwise order) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_convex_hull_8h_aea98b9fec809f226f9405b078118c38d}\label{_convex_hull_8h_aea98b9fec809f226f9405b078118c38d}} 
+\index{ConvexHull.h@{ConvexHull.h}!lowerTangent@{lowerTangent}}
+\index{lowerTangent@{lowerTangent}!ConvexHull.h@{ConvexHull.h}}
+\doxysubsubsection{\texorpdfstring{lowerTangent()}{lowerTangent()}}
+{\footnotesize\ttfamily pair$<$long long, long long$>$ lower\+Tangent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point_list}{Point\+List}} \&}]{l\+Hull,  }\item[{\mbox{\hyperlink{class_point_list}{Point\+List}} \&}]{r\+Hull }\end{DoxyParamCaption})}
+
+
+
+compute the lower tangent for the given left hull and right hull 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l\+Hull} & \mbox{\hyperlink{class_point_list}{Point\+List}} object contaning the points on the left hull in clockwise order \\
+\hline
+{\em r\+Hull} & \mbox{\hyperlink{class_point_list}{Point\+List}} object containig the points on the right hull in clockwise order \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a S\+TL pair object with the points which are part of lower tangent between both hulls 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_convex_hull_8h_a96eb851f8cc96dd279ef55d7e6e7a598}\label{_convex_hull_8h_a96eb851f8cc96dd279ef55d7e6e7a598}} 
+\index{ConvexHull.h@{ConvexHull.h}!upperConvexHull@{upperConvexHull}}
+\index{upperConvexHull@{upperConvexHull}!ConvexHull.h@{ConvexHull.h}}
+\doxysubsubsection{\texorpdfstring{upperConvexHull()}{upperConvexHull()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point_list}{Point\+List}} upper\+Convex\+Hull (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point_list}{Point\+List}} \&}]{input,  }\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})}
+
+
+
+Recursive function to compute the upper hull of the left half and right half points then merge them with upper tangent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input points which are sorted w.\+r.\+t x coordinate \\
+\hline
+{\em start} & start index of interval over which upper hull is computed \\
+\hline
+{\em end} & ending index of interval over which upper hull is computed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_point_list}{Point\+List}} with all Points present on upper hull of given interval (in clockwise order) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_convex_hull_8h_a843829a6f32573c0d5778b7c3f68c1fc}\label{_convex_hull_8h_a843829a6f32573c0d5778b7c3f68c1fc}} 
+\index{ConvexHull.h@{ConvexHull.h}!upperTangent@{upperTangent}}
+\index{upperTangent@{upperTangent}!ConvexHull.h@{ConvexHull.h}}
+\doxysubsubsection{\texorpdfstring{upperTangent()}{upperTangent()}}
+{\footnotesize\ttfamily pair$<$long long, long long$>$ upper\+Tangent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point_list}{Point\+List}} \&}]{l\+Hull,  }\item[{\mbox{\hyperlink{class_point_list}{Point\+List}} \&}]{r\+Hull }\end{DoxyParamCaption})}
+
+
+
+compute the upper tangent for the given left hull and right hull 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l\+Hull} & \mbox{\hyperlink{class_point_list}{Point\+List}} object contaning the points on the left hull in clockwise order \\
+\hline
+{\em r\+Hull} & \mbox{\hyperlink{class_point_list}{Point\+List}} object containig the points on the right hull in clockwise order \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a S\+TL pair object with the points which are part of upper tangent between both hulls 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_convex_hull_8h_a72d95f7d7cc25bb020d3773e260822fb}\label{_convex_hull_8h_a72d95f7d7cc25bb020d3773e260822fb}} 
+\index{ConvexHull.h@{ConvexHull.h}!xAxisSort@{xAxisSort}}
+\index{xAxisSort@{xAxisSort}!ConvexHull.h@{ConvexHull.h}}
+\doxysubsubsection{\texorpdfstring{xAxisSort()}{xAxisSort()}}
+{\footnotesize\ttfamily void x\+Axis\+Sort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_point_list}{Point\+List}} \&}]{input }\end{DoxyParamCaption})}
+
+
+
+function to sort given list of points in increasing order of x coordinate 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & \mbox{\hyperlink{class_point_list}{Point\+List}} object containing the user input data points \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_convex_hull_8h_a6b7caa011d7cf7bb00b12feb24a60192}\label{_convex_hull_8h_a6b7caa011d7cf7bb00b12feb24a60192}} 
+\index{ConvexHull.h@{ConvexHull.h}!xPointComparator@{xPointComparator}}
+\index{xPointComparator@{xPointComparator}!ConvexHull.h@{ConvexHull.h}}
+\doxysubsubsection{\texorpdfstring{xPointComparator()}{xPointComparator()}}
+{\footnotesize\ttfamily bool x\+Point\+Comparator (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{a,  }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+comparator function used to compare x coordinates while sorting 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & first \mbox{\hyperlink{class_point}{Point}} object \\
+\hline
+{\em b} & second \mbox{\hyperlink{class_point}{Point}} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a comes before b 
+\end{DoxyReturn}

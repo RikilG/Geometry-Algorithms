@@ -19,14 +19,30 @@
 
 using namespace std;
 
+/**
+ * \brief comparator function used to compare x coordinates while sorting
+ * \param a first Point object
+ * \param b second Point object
+ * \return true if a comes before b
+ */
 bool xPointComparator(const Point &a, const Point &b) {
     return (a.x < b.x);
 }
 
+/**
+ * \brief function to sort given list of points in increasing order of x coordinate
+ * \param input PointList object containing the user input data points
+ */
 void xAxisSort(PointList &input) {
     sort(input.begin(), input.end(), xPointComparator);
 }
 
+/**
+ * \brief compute the upper tangent for the given left hull and right hull
+ * \param lHull PointList object contaning the points on the left hull in clockwise order
+ * \param rHull PointList object containig the points on the right hull in clockwise order
+ * \return a STL pair object with the points which are part of upper tangent between both hulls
+ */
 pair<long long, long long> upperTangent(PointList& lHull, PointList& rHull) {
     lHull.setSentinels(true, true);
     rHull.setSentinels(true, true);
@@ -53,6 +69,12 @@ pair<long long, long long> upperTangent(PointList& lHull, PointList& rHull) {
     return make_pair(lp, rp);
 }
 
+/**
+ * \brief compute the lower tangent for the given left hull and right hull
+ * \param lHull PointList object contaning the points on the left hull in clockwise order
+ * \param rHull PointList object containig the points on the right hull in clockwise order
+ * \return a STL pair object with the points which are part of lower tangent between both hulls
+ */
 pair<long long, long long> lowerTangent(PointList& lHull, PointList& rHull) {
     lHull.setSentinels(true, false);
     rHull.setSentinels(true, false);
@@ -79,6 +101,12 @@ pair<long long, long long> lowerTangent(PointList& lHull, PointList& rHull) {
     return make_pair(lp, rp);
 }
 
+/**
+ * \brief Function to combine the upper hull and the lower hull
+ * \param uHull PointList object with points of upper hull in clockwise order
+ * \param lHull PointList object with points of lower hull in clockwise order
+ * \return PointList object with the final list of points present on the complete convex hull in clockwise order
+ */
 PointList combineHulls(PointList &uHull, PointList &lHull) {
     PointList output;
     for (long long i=uHull.size()-1;i>=0;i--) output.push_back(uHull[i]); //ccw direction
@@ -90,6 +118,13 @@ PointList combineHulls(PointList &uHull, PointList &lHull) {
     return output;
 }
 
+/**
+ * \brief Recursive function to compute the upper hull of the left half and right half points then merge them with upper tangent
+ * \param input input points which are sorted w.r.t x coordinate
+ * \param start start index of interval over which upper hull is computed
+ * \param end ending index of interval over which upper hull is computed
+ * \return PointList with all Points present on upper hull of given interval (in clockwise order)
+ */
 PointList upperConvexHull(PointList &input, int start, int end) {
     PointList output;
     if (end-start+1 <= 3) { // base case
@@ -111,6 +146,13 @@ PointList upperConvexHull(PointList &input, int start, int end) {
     return output;
 }
 
+/**
+ * \brief Recursive function to compute the lower hull of the left half and right half points then merge them with lower tangent
+ * \param input input points which are sorted w.r.t x coordinate
+ * \param start start index of interval over which lower hull is computed
+ * \param end ending index of interval over which lower hull is computed
+ * \return PointList with all Points present on lower hull of given interval (in clockwise order)
+ */
 PointList lowerConvexHull(PointList &input, int start, int end) {
     PointList output;
     if (end-start+1 <= 3) { // base case
@@ -132,6 +174,11 @@ PointList lowerConvexHull(PointList &input, int start, int end) {
     return output;
 }
 
+/**
+ * \brief driver function which computes upper hull, lower hull and then combines them
+ * \param input input points given by user over which convex hull is computed
+ * \return Points present on the convex hull of given points in clockwise order 
+ */
 PointList convexHull(PointList &input) {
     xAxisSort(input);
     PointList uHull = upperConvexHull(input, 0, input.size()-1);

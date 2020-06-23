@@ -1,0 +1,142 @@
+\hypertarget{class_point_list}{}\doxysection{Point\+List Class Reference}
+\label{class_point_list}\index{PointList@{PointList}}
+
+
+Structure to store a list of \mbox{\hyperlink{class_point}{Point}} class objects(points)  
+
+
+
+
+{\ttfamily \#include $<$Point\+List.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_point_list_af878b01fdcf91fa6c5b0d2803cd07536}\label{class_point_list_af878b01fdcf91fa6c5b0d2803cd07536}} 
+\mbox{\hyperlink{class_point_list_af878b01fdcf91fa6c5b0d2803cd07536}{Point\+List}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{class_point}{Point}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point_list_a10fb6f46f739a6729fc44620a2bc7b34}{Point\+List}} (vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$ points)
+\begin{DoxyCompactList}\small\item\em vector based constructor for \mbox{\hyperlink{class_point}{Point}} class \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_list_a9e5e7af2955034946aeadade570e6227}{set\+Sentinels}} (bool value, bool upper\+Hull)
+\begin{DoxyCompactList}\small\item\em add or remove sentinel nodes \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_point_list_a7e10fbce6d887c9c9134ddca248078a8}\label{class_point_list_a7e10fbce6d887c9c9134ddca248078a8}} 
+auto \mbox{\hyperlink{class_point_list_a7e10fbce6d887c9c9134ddca248078a8}{emplace\+\_\+back}} (long a, long b)
+\begin{DoxyCompactList}\small\item\em To provide interface to S\+TL vector\textquotesingle{}s \mbox{\hyperlink{class_point_list_a7e10fbce6d887c9c9134ddca248078a8}{emplace\+\_\+back()}} function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_point_list_aafa1ec337dc510708c979785c464003d}\label{class_point_list_aafa1ec337dc510708c979785c464003d}} 
+auto \mbox{\hyperlink{class_point_list_aafa1ec337dc510708c979785c464003d}{push\+\_\+back}} (\mbox{\hyperlink{class_point}{Point}} \&p)
+\begin{DoxyCompactList}\small\item\em To provide interface to S\+TL vector\textquotesingle{}s \mbox{\hyperlink{class_point_list_aafa1ec337dc510708c979785c464003d}{push\+\_\+back()}} function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_point_list_a31c9f031f5c78f4afd01f457550204ec}\label{class_point_list_a31c9f031f5c78f4afd01f457550204ec}} 
+auto \mbox{\hyperlink{class_point_list_a31c9f031f5c78f4afd01f457550204ec}{size}} ()
+\begin{DoxyCompactList}\small\item\em To provide interface to S\+TL vector\textquotesingle{}s \mbox{\hyperlink{class_point_list_a31c9f031f5c78f4afd01f457550204ec}{size()}} function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_point_list_ae70d9cb8415f927bcadac815c21e4e27}\label{class_point_list_ae70d9cb8415f927bcadac815c21e4e27}} 
+auto \mbox{\hyperlink{class_point_list_ae70d9cb8415f927bcadac815c21e4e27}{begin}} ()
+\begin{DoxyCompactList}\small\item\em To provide interface to S\+TL vector\textquotesingle{}s \mbox{\hyperlink{class_point_list_ae70d9cb8415f927bcadac815c21e4e27}{begin()}} function which returns iterator to the start of container. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_point_list_a64ccb6fe0e9f8cd4fde1cb91ea6ae433}\label{class_point_list_a64ccb6fe0e9f8cd4fde1cb91ea6ae433}} 
+auto \mbox{\hyperlink{class_point_list_a64ccb6fe0e9f8cd4fde1cb91ea6ae433}{end}} ()
+\begin{DoxyCompactList}\small\item\em To provide interface to S\+TL vector\textquotesingle{}s \mbox{\hyperlink{class_point_list_a64ccb6fe0e9f8cd4fde1cb91ea6ae433}{end()}} function which returns iterator to the end of container. \end{DoxyCompactList}\item 
+auto \mbox{\hyperlink{class_point_list_a1807ef330d6380a8974adc739ea75376}{erase}} (size\+\_\+t idx1, size\+\_\+t idx2)
+\begin{DoxyCompactList}\small\item\em erase the points present in the given range of indices \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_point_list_adb0fce2a3af5a10286210d05c4dbb7be}\label{class_point_list_adb0fce2a3af5a10286210d05c4dbb7be}} 
+void \mbox{\hyperlink{class_point_list_adb0fce2a3af5a10286210d05c4dbb7be}{print}} ()
+\begin{DoxyCompactList}\small\item\em print the points contained in this \mbox{\hyperlink{class_point_list}{Point\+List}} object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_point_list_a2c0e7dbb7688722a81cc414ad11a7a60}{print}} (int s, int e)
+\begin{DoxyCompactList}\small\item\em print the points contained in this \mbox{\hyperlink{class_point_list}{Point\+List}} in the specified range \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point}{Point}} \& \mbox{\hyperlink{class_point_list_ac63b02af37ce1caec67e816009ffb1fe}{operator\mbox{[}$\,$\mbox{]}}} (long long idx)
+\begin{DoxyCompactList}\small\item\em To provide interface to S\+TL vector\textquotesingle{}s access operator \mbox{[}\mbox{]}. Also considers sentinel nodes if index is $<$0 or $>$=size of \mbox{\hyperlink{class_point_list}{Point\+List}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure to store a list of \mbox{\hyperlink{class_point}{Point}} class objects(points) 
+
+This class gives functionality to store a list of \mbox{\hyperlink{class_point}{Point}} objects with additional support of having sentinel nodes which are auto determined by the class based on points present in its list. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_point_list_a10fb6f46f739a6729fc44620a2bc7b34}\label{class_point_list_a10fb6f46f739a6729fc44620a2bc7b34}} 
+\index{PointList@{PointList}!PointList@{PointList}}
+\index{PointList@{PointList}!PointList@{PointList}}
+\doxysubsubsection{\texorpdfstring{PointList()}{PointList()}}
+{\footnotesize\ttfamily Point\+List\+::\+Point\+List (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_point}{Point}} $>$}]{points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+vector based constructor for \mbox{\hyperlink{class_point}{Point}} class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & vector of \mbox{\hyperlink{class_point}{Point}} objects used to initialize \mbox{\hyperlink{class_point_list}{Point\+List}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_point_list_a1807ef330d6380a8974adc739ea75376}\label{class_point_list_a1807ef330d6380a8974adc739ea75376}} 
+\index{PointList@{PointList}!erase@{erase}}
+\index{erase@{erase}!PointList@{PointList}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily auto Point\+List\+::erase (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{idx1,  }\item[{size\+\_\+t}]{idx2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+erase the points present in the given range of indices 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx1} & index from which points must be erased \\
+\hline
+{\em idx2} & index until which all points will be erased (inclusive) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_point_list_ac63b02af37ce1caec67e816009ffb1fe}\label{class_point_list_ac63b02af37ce1caec67e816009ffb1fe}} 
+\index{PointList@{PointList}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!PointList@{PointList}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_point}{Point}}\& Point\+List\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{long long}]{idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+To provide interface to S\+TL vector\textquotesingle{}s access operator \mbox{[}\mbox{]}. Also considers sentinel nodes if index is $<$0 or $>$=size of \mbox{\hyperlink{class_point_list}{Point\+List}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & index which is to be accessed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_point_list_a2c0e7dbb7688722a81cc414ad11a7a60}\label{class_point_list_a2c0e7dbb7688722a81cc414ad11a7a60}} 
+\index{PointList@{PointList}!print@{print}}
+\index{print@{print}!PointList@{PointList}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Point\+List\+::print (\begin{DoxyParamCaption}\item[{int}]{s,  }\item[{int}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+print the points contained in this \mbox{\hyperlink{class_point_list}{Point\+List}} in the specified range 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & starting index to start printing from \\
+\hline
+{\em e} & ending index to end printing at (inclusive) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_point_list_a9e5e7af2955034946aeadade570e6227}\label{class_point_list_a9e5e7af2955034946aeadade570e6227}} 
+\index{PointList@{PointList}!setSentinels@{setSentinels}}
+\index{setSentinels@{setSentinels}!PointList@{PointList}}
+\doxysubsubsection{\texorpdfstring{setSentinels()}{setSentinels()}}
+{\footnotesize\ttfamily void Point\+List\+::set\+Sentinels (\begin{DoxyParamCaption}\item[{bool}]{value,  }\item[{bool}]{upper\+Hull }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add or remove sentinel nodes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & boolean value which when set to true, sets the sentinel nodes for this \mbox{\hyperlink{class_point_list}{Point\+List}} \\
+\hline
+{\em upper\+Hull} & boolean value to be set to true if the current operations are to be performed on upper hull \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_point_list_8h}{Point\+List.\+h}}\end{DoxyCompactItemize}
