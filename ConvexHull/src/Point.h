@@ -1,3 +1,9 @@
+/**
+ * \file Point.h
+ * \brief This file contains the implementation of the Point class
+ * 
+ */
+
 #ifndef __POINT_H__
 #define __POINT_H__
 

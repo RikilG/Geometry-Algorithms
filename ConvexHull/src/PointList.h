@@ -1,3 +1,12 @@
+/**
+ * \file PointList.h
+ * \brief This file contains the implementation of PointList class
+ * 
+ * PointList class, although similar to c++ vector tries to extend the default
+ * vector capabilities. The main reason for this class to exist is due to the 
+ * requirement of sentinel nodes while computing the upper and lower tangents.
+ */
+
 #ifndef __POINTLIST_H__
 #define __POINTLIST_H__
 

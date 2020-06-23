@@ -1,3 +1,12 @@
+/**
+ * \file Tools.h
+ * \brief The main purpose of this file is to provide a data input function.
+ * 
+ * This file provides the readPoints() function which helps to read file and 
+ * take input from it. In case any file is not provided, It tries to take input
+ * from the user via stdin.
+ */
+
 #ifndef __TOOLS_H__
 #define __TOOLS_H__
 
@@ -11,7 +20,7 @@ using namespace std;
 
 int orient(const Point &p, const Point &q, const Point &r) {
     // counter clock wise: +ve: upward direction: +ve orient
-    int x = ((q.x*r.y-r.x*q.y) - p.x*(r.y-q.y) + p.y*(r.x-q.x));
+    long long x = ((q.x*(long long)r.y-r.x*(long long)q.y) - p.x*(long long)(r.y-q.y) + p.y*(long long)(r.x-q.x));
     if (x == 0) return 0;
     else return (x>0) ? 1 : -1 ;
 }
