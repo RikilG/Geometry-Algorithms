@@ -1,0 +1,46 @@
+\hypertarget{ear_clipping_triangulation_8h}{}\doxysection{ear\+Clipping\+Triangulation.\+h File Reference}
+\label{ear_clipping_triangulation_8h}\index{earClippingTriangulation.h@{earClippingTriangulation.h}}
+
+
+This file contains the implementation of the ear clipping triangulation algorithm.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}Geometry.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Tools.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{class_triangle}{Triangle}} $>$ \mbox{\hyperlink{ear_clipping_triangulation_8h_a6b622555d137399484e2b98b241b7ad2}{ear\+Clipping\+Triangulate}} (vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ points)
+\begin{DoxyCompactList}\small\item\em This function implements the basic ear clipping triangulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the implementation of the ear clipping triangulation algorithm. 
+
+\begin{DoxyAuthor}{Author}
+Rikil Gajarla (\href{mailto:f20170202@hyderabad.bits-pilani.ac.in}{\texttt{ f20170202@hyderabad.\+bits-\/pilani.\+ac.\+in}}) 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ear_clipping_triangulation_8h_a6b622555d137399484e2b98b241b7ad2}\label{ear_clipping_triangulation_8h_a6b622555d137399484e2b98b241b7ad2}} 
+\index{earClippingTriangulation.h@{earClippingTriangulation.h}!earClippingTriangulate@{earClippingTriangulate}}
+\index{earClippingTriangulate@{earClippingTriangulate}!earClippingTriangulation.h@{earClippingTriangulation.h}}
+\doxysubsubsection{\texorpdfstring{earClippingTriangulate()}{earClippingTriangulate()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_triangle}{Triangle}}$>$ ear\+Clipping\+Triangulate (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$}]{points }\end{DoxyParamCaption})}
+
+
+
+This function implements the basic ear clipping triangulation. 
+
+The main approach behind this algorithm is that we try to find \char`\"{}ears\char`\"{} which are basically the vertices of the polygon whose interior angle is less than PI. We then triangulate these ears and remove them from the Polygon. we perform the same operation on the polygon until it is completely triangulated
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & The input vertices of polygon in clockwise order \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Triangle$>$ List of \mbox{\hyperlink{class_triangle}{Triangle}} objects which are the triangulations of the input polygon 
+\end{DoxyReturn}

@@ -1,0 +1,214 @@
+\hypertarget{class_vertex}{}\doxysection{Vertex Class Reference}
+\label{class_vertex}\index{Vertex@{Vertex}}
+
+
+Basic geometric \mbox{\hyperlink{class_vertex}{Vertex}} class to store coordinates of vertex.  
+
+
+
+
+{\ttfamily \#include $<$Geometry.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vertex_a97488994a2482d70da74e1b91d40e169}{Vertex}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new empty \mbox{\hyperlink{class_vertex}{Vertex}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex_a8f1488ab9b5e5eeaabae82ae988fbcb0}{Vertex}} (float X, float Y)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_vertex}{Vertex}} object with the given coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex_aa65f89e97748434248ab4991d5563e15}{Vertex}} (float X, float Y, unsigned long Tag)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_vertex}{Vertex}} object with the given coordinates and extra tag. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex_a1e5ad63c96bb0bd2af4ae709cf0466f8}{Vertex}} (const \mbox{\hyperlink{class_vertex}{Vertex}} \&p)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_vertex}{Vertex}} object from another \mbox{\hyperlink{class_vertex}{Vertex}} object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vertex_a50c7b9747e7c6eb761d0559dbfd9847d}{operator==}} (const \mbox{\hyperlink{class_vertex}{Vertex}} \&v)
+\begin{DoxyCompactList}\small\item\em To overload == operator on \mbox{\hyperlink{class_vertex}{Vertex}} type objects. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vertex_a5bc741f13f151e984f04b5ff5d8d389f}{operator!=}} (const \mbox{\hyperlink{class_vertex}{Vertex}} \&v)
+\begin{DoxyCompactList}\small\item\em To overload != operator on \mbox{\hyperlink{class_vertex}{Vertex}} type objects. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_vertex_a4b6a2672dd50341ddfba753270a3c715}{operator$<$}} (const \mbox{\hyperlink{class_vertex}{Vertex}} \&v) const
+\begin{DoxyCompactList}\small\item\em To overload $<$ operator on \mbox{\hyperlink{class_vertex}{Vertex}} type objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex}{Vertex}} \mbox{\hyperlink{class_vertex_a9a2109d0470ed80c9ea6e340e6c0f210}{operator-\/}} (const \mbox{\hyperlink{class_vertex}{Vertex}} \&v)
+\begin{DoxyCompactList}\small\item\em To overlaod -\/ operator on \mbox{\hyperlink{class_vertex}{Vertex}} type objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_vertex_aa592e1564aa3b226ff629b824b240310}\label{class_vertex_aa592e1564aa3b226ff629b824b240310}} 
+float {\bfseries x}
+\item 
+\mbox{\Hypertarget{class_vertex_a448817068556fe43e81dc0a3e7d1fa43}\label{class_vertex_a448817068556fe43e81dc0a3e7d1fa43}} 
+float {\bfseries y}
+\item 
+\mbox{\Hypertarget{class_vertex_a95f03e575c3f9c0bccc2fd4a8f8defa3}\label{class_vertex_a95f03e575c3f9c0bccc2fd4a8f8defa3}} 
+unsigned long {\bfseries tag}
+\item 
+\mbox{\Hypertarget{class_vertex_aa42fa059c43a47f26fa52f196bb7e060}\label{class_vertex_aa42fa059c43a47f26fa52f196bb7e060}} 
+unsigned long {\bfseries parent}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic geometric \mbox{\hyperlink{class_vertex}{Vertex}} class to store coordinates of vertex. 
+
+This class stores the (x, y) coordinate of a vertex as taken from the user input. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_vertex_a97488994a2482d70da74e1b91d40e169}\label{class_vertex_a97488994a2482d70da74e1b91d40e169}} 
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Vertex\+::\+Vertex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new empty \mbox{\hyperlink{class_vertex}{Vertex}} object. 
+
+\mbox{\Hypertarget{class_vertex_a8f1488ab9b5e5eeaabae82ae988fbcb0}\label{class_vertex_a8f1488ab9b5e5eeaabae82ae988fbcb0}} 
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Vertex\+::\+Vertex (\begin{DoxyParamCaption}\item[{float}]{X,  }\item[{float}]{Y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_vertex}{Vertex}} object with the given coordinates. 
+
+A vertex type object will be constructed with the given coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & x coordinate of the input vertex \\
+\hline
+{\em Y} & y coordinate of the input vertex \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vertex_aa65f89e97748434248ab4991d5563e15}\label{class_vertex_aa65f89e97748434248ab4991d5563e15}} 
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Vertex\+::\+Vertex (\begin{DoxyParamCaption}\item[{float}]{X,  }\item[{float}]{Y,  }\item[{unsigned long}]{Tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_vertex}{Vertex}} object with the given coordinates and extra tag. 
+
+A vertex type object will be constructed with the given coordinates and tag.
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & x coordinate of the input vertex \\
+\hline
+{\em Y} & y coordinate of the input vertex \\
+\hline
+{\em Tag} & integer tag to be assigned to this vertex \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_vertex_a1e5ad63c96bb0bd2af4ae709cf0466f8}\label{class_vertex_a1e5ad63c96bb0bd2af4ae709cf0466f8}} 
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Vertex\+::\+Vertex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_vertex}{Vertex}} object from another \mbox{\hyperlink{class_vertex}{Vertex}} object. 
+
+This is effectively a copy constructor for the new \mbox{\hyperlink{class_vertex}{Vertex}} object
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \mbox{\hyperlink{class_vertex}{Vertex}} type object whose all parameters will be copied \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vertex_a5bc741f13f151e984f04b5ff5d8d389f}\label{class_vertex_a5bc741f13f151e984f04b5ff5d8d389f}} 
+\index{Vertex@{Vertex}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Vertex\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+To overload != operator on \mbox{\hyperlink{class_vertex}{Vertex}} type objects. 
+
+This returns N\+OT of the == overloaded operator
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_vertex}{Vertex}} object to be compared with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if at least one coordinate differs 
+
+false if both coordinates match 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vertex_a9a2109d0470ed80c9ea6e340e6c0f210}\label{class_vertex_a9a2109d0470ed80c9ea6e340e6c0f210}} 
+\index{Vertex@{Vertex}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vertex}{Vertex}} Vertex\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+To overlaod -\/ operator on \mbox{\hyperlink{class_vertex}{Vertex}} type objects. 
+
+This can be mainly used for applications like shifting the point with reference to other point. Another application is subtract operation when the \mbox{\hyperlink{class_vertex}{Vertex}} class is used to represent vectors(since even vectors attributes are similar to points)
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_vertex}{Vertex}} object to be subtracted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_vertex}{Vertex}} \mbox{\hyperlink{class_vertex}{Vertex}} with the final values after subtraction 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vertex_a4b6a2672dd50341ddfba753270a3c715}\label{class_vertex_a4b6a2672dd50341ddfba753270a3c715}} 
+\index{Vertex@{Vertex}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Vertex\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+To overload $<$ operator on \mbox{\hyperlink{class_vertex}{Vertex}} type objects. 
+
+\mbox{\hyperlink{class_vertex}{Vertex}} a is less than \mbox{\hyperlink{class_vertex}{Vertex}} b (a $<$ b) if x coordinate of a is lesser than b. In case x coordinate is equal, their y coordinates are compared.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_vertex}{Vertex}} object to be compared with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if current x coordinate is less than the other (y is used if x is same) 
+
+false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_vertex_a50c7b9747e7c6eb761d0559dbfd9847d}\label{class_vertex_a50c7b9747e7c6eb761d0559dbfd9847d}} 
+\index{Vertex@{Vertex}!operator==@{operator==}}
+\index{operator==@{operator==}!Vertex@{Vertex}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Vertex\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+To overload == operator on \mbox{\hyperlink{class_vertex}{Vertex}} type objects. 
+
+This returns true only if both x and y coordinates are equal between the objects being compared.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_vertex}{Vertex}} object to be compared with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if both coordinates match 
+
+false if at least one coordinate differs 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_geometry_8h}{Geometry.\+h}}\end{DoxyCompactItemize}

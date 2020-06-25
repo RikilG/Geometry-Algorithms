@@ -1,0 +1,69 @@
+\hypertarget{class_half_edge}{}\doxysection{Half\+Edge Class Reference}
+\label{class_half_edge}\index{HalfEdge@{HalfEdge}}
+
+
+Basic geometric \mbox{\hyperlink{class_face}{Face}} class to store a \mbox{\hyperlink{class_face}{Face}} structure.  
+
+
+
+
+{\ttfamily \#include $<$Geometry.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_half_edge_a7b848a010c5c8bf4cea7508ebe8018d8}{Half\+Edge}} (const \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$src, const \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$dst)
+\begin{DoxyCompactList}\small\item\em Construct a new Half \mbox{\hyperlink{class_edge}{Edge}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_half_edge_a02bbf630ad01fd4d7bf4af38e286844e}\label{class_half_edge_a02bbf630ad01fd4d7bf4af38e286844e}} 
+\mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$ {\bfseries prev}
+\item 
+\mbox{\Hypertarget{class_half_edge_a5918db069bb8b4a89e471c01a14fc6e1}\label{class_half_edge_a5918db069bb8b4a89e471c01a14fc6e1}} 
+\mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$ {\bfseries next}
+\item 
+\mbox{\Hypertarget{class_half_edge_a37e7696a7131767a0c76e45ed69be4c5}\label{class_half_edge_a37e7696a7131767a0c76e45ed69be4c5}} 
+\mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$ {\bfseries twin}
+\item 
+\mbox{\Hypertarget{class_half_edge_a2d2f7056e0f7c9c47a9840ec9bcd69c0}\label{class_half_edge_a2d2f7056e0f7c9c47a9840ec9bcd69c0}} 
+const \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ {\bfseries tail}
+\item 
+\mbox{\Hypertarget{class_half_edge_a6ed97da810c7a1b24e6c9f9f43aad1d9}\label{class_half_edge_a6ed97da810c7a1b24e6c9f9f43aad1d9}} 
+const \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ {\bfseries head}
+\item 
+\mbox{\Hypertarget{class_half_edge_a08080cb14f0da4274e47a56f24071196}\label{class_half_edge_a08080cb14f0da4274e47a56f24071196}} 
+\mbox{\hyperlink{class_face}{Face}} $\ast$ {\bfseries face}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic geometric \mbox{\hyperlink{class_face}{Face}} class to store a \mbox{\hyperlink{class_face}{Face}} structure. 
+
+Each \mbox{\hyperlink{class_edge}{Edge}} will be split into 2 Half\+Edges and hence, these are directional. Each \mbox{\hyperlink{class_half_edge}{Half\+Edge}} object has a next pointer, prev pointer, twin pointer, tail pointer, head pointer and face pointer to give a complete information about all its incident geometric objects. This class is the main component of the D\+C\+EL structure. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_half_edge_a7b848a010c5c8bf4cea7508ebe8018d8}\label{class_half_edge_a7b848a010c5c8bf4cea7508ebe8018d8}} 
+\index{HalfEdge@{HalfEdge}!HalfEdge@{HalfEdge}}
+\index{HalfEdge@{HalfEdge}!HalfEdge@{HalfEdge}}
+\doxysubsubsection{\texorpdfstring{HalfEdge()}{HalfEdge()}}
+{\footnotesize\ttfamily Half\+Edge\+::\+Half\+Edge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{src,  }\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Half \mbox{\hyperlink{class_edge}{Edge}} object. 
+
+Construct a \mbox{\hyperlink{class_half_edge}{Half\+Edge}} object from the given 2 vertices. Note that directionality is important. First argument refers to the src/source/tail whereas the second argument refers to the dst/destination/head.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & source or the tail \mbox{\hyperlink{class_vertex}{Vertex}} of the \mbox{\hyperlink{class_half_edge}{Half\+Edge}} \\
+\hline
+{\em dst} & destination or the head \mbox{\hyperlink{class_vertex}{Vertex}} of the \mbox{\hyperlink{class_half_edge}{Half\+Edge}} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_geometry_8h}{Geometry.\+h}}\end{DoxyCompactItemize}

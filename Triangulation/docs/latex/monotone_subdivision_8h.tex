@@ -1,0 +1,84 @@
+\hypertarget{monotone_subdivision_8h}{}\doxysection{monotone\+Subdivision.\+h File Reference}
+\label{monotone_subdivision_8h}\index{monotoneSubdivision.h@{monotoneSubdivision.h}}
+
+
+This file contains the algorithm to subdivide the polygon into monotones.  
+
+
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include \char`\"{}Geometry.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Tools.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_graph}{Graph}}
+\begin{DoxyCompactList}\small\item\em This class stores the graph representation of the input polygon. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_sweep_status}{Sweep\+Status}}
+\begin{DoxyCompactList}\small\item\em This class represents the sweep line status for the plane sweep algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{monotone_subdivision_8h_a24a85cbe21f150cc46423f7973593cbb}{fixup}} (\mbox{\hyperlink{class_vertex}{Vertex}} \&v, \mbox{\hyperlink{class_edge}{Edge}} \&e, \mbox{\hyperlink{class_graph}{Graph}} \&graph, \mbox{\hyperlink{class_sweep_status}{Sweep\+Status}} \&status)
+\begin{DoxyCompactList}\small\item\em try to fix and connect the \mbox{\hyperlink{class_vertex}{Vertex}} v to the helper of \mbox{\hyperlink{class_edge}{Edge}} e \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{monotone_subdivision_8h_a35a83a11a6768233a4374aecfb612c2a}\label{monotone_subdivision_8h_a35a83a11a6768233a4374aecfb612c2a}} 
+void {\bfseries check\+Sort} (vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \&events, vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \&original)
+\item 
+list$<$ vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ $>$ \mbox{\hyperlink{monotone_subdivision_8h_ae5251d1bb7a8c8663dd71232d7dc0461}{get\+Monotones}} (vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ input)
+\begin{DoxyCompactList}\small\item\em Returns the monotones present in the input polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the algorithm to subdivide the polygon into monotones. 
+
+\begin{DoxyAuthor}{Author}
+Rikil Gajarla (\href{mailto:f20170202@hyderabad.bits-pilani.ac.in}{\texttt{ f20170202@hyderabad.\+bits-\/pilani.\+ac.\+in}}) 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{monotone_subdivision_8h_a24a85cbe21f150cc46423f7973593cbb}\label{monotone_subdivision_8h_a24a85cbe21f150cc46423f7973593cbb}} 
+\index{monotoneSubdivision.h@{monotoneSubdivision.h}!fixup@{fixup}}
+\index{fixup@{fixup}!monotoneSubdivision.h@{monotoneSubdivision.h}}
+\doxysubsubsection{\texorpdfstring{fixup()}{fixup()}}
+{\footnotesize\ttfamily void fixup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \&}]{v,  }\item[{\mbox{\hyperlink{class_edge}{Edge}} \&}]{e,  }\item[{\mbox{\hyperlink{class_graph}{Graph}} \&}]{graph,  }\item[{\mbox{\hyperlink{class_sweep_status}{Sweep\+Status}} \&}]{status }\end{DoxyParamCaption})}
+
+
+
+try to fix and connect the \mbox{\hyperlink{class_vertex}{Vertex}} v to the helper of \mbox{\hyperlink{class_edge}{Edge}} e 
+
+This method only connects v to helper(e) only if v is a merge vertex
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_vertex}{Vertex}} who needs to be connected to a helper \\
+\hline
+{\em e} & The upper \mbox{\hyperlink{class_edge}{Edge}} whose helper us used to draw diagonal \\
+\hline
+{\em graph} & The current \mbox{\hyperlink{class_graph}{Graph}} object on which the operations are performed \\
+\hline
+{\em status} & The current \mbox{\hyperlink{class_sweep_status}{Sweep\+Status}} object which contains all the intersecting edges \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{monotone_subdivision_8h_ae5251d1bb7a8c8663dd71232d7dc0461}\label{monotone_subdivision_8h_ae5251d1bb7a8c8663dd71232d7dc0461}} 
+\index{monotoneSubdivision.h@{monotoneSubdivision.h}!getMonotones@{getMonotones}}
+\index{getMonotones@{getMonotones}!monotoneSubdivision.h@{monotoneSubdivision.h}}
+\doxysubsubsection{\texorpdfstring{getMonotones()}{getMonotones()}}
+{\footnotesize\ttfamily list$<$vector$<$\mbox{\hyperlink{class_vertex}{Vertex}}$>$ $>$ get\+Monotones (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$}]{input }\end{DoxyParamCaption})}
+
+
+
+Returns the monotones present in the input polygon. 
+
+This is the main function which performs plane sweep algorithm to detect and return the monotones present in the polygon after adding required diagonals
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Clockwise ordering of vertices of input polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list$<$vector$<$\+Vertex$>$$>$ List of polygons which are monotone (vertices of each monotone are clockwise ordered) 
+\end{DoxyReturn}

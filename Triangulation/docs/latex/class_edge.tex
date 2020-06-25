@@ -1,0 +1,143 @@
+\hypertarget{class_edge}{}\doxysection{Edge Class Reference}
+\label{class_edge}\index{Edge@{Edge}}
+
+
+Basic geometric \mbox{\hyperlink{class_edge}{Edge}} class to store endpoints of edges.  
+
+
+
+
+{\ttfamily \#include $<$Geometry.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_edge_a3106b11d60125009dbf7a738ce540fdf}{Edge}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new empty \mbox{\hyperlink{class_edge}{Edge}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge_a95c8e46ae62e05d5e75c41e061f298b5}{Edge}} (\mbox{\hyperlink{class_vertex}{Vertex}} \&source, \mbox{\hyperlink{class_vertex}{Vertex}} \&destination)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_edge}{Edge}} object from given vertices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge_a7dc18beb505404bea34bc7a22de5235a}{Edge}} (float x1, float y1, float x2, float y2)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_edge}{Edge}} object from vertex coordinates. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_edge_ae7d4e4cdbf2023b9dfa1c8162ace412f}{operator==}} (const \mbox{\hyperlink{class_edge}{Edge}} \&e)
+\begin{DoxyCompactList}\small\item\em To overload == operator on \mbox{\hyperlink{class_edge}{Edge}} type objects. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_edge_ac536795f4bf8819f67eaad00ad19d4bf}{operator!=}} (const \mbox{\hyperlink{class_edge}{Edge}} \&e)
+\begin{DoxyCompactList}\small\item\em To overload != operator on \mbox{\hyperlink{class_edge}{Edge}} type objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_edge_a2175ea3890dfbc06663fae49951d8980}\label{class_edge_a2175ea3890dfbc06663fae49951d8980}} 
+\mbox{\hyperlink{class_vertex}{Vertex}} {\bfseries src}
+\item 
+\mbox{\Hypertarget{class_edge_af5d854bda27c5ba92d10bbd885980ca4}\label{class_edge_af5d854bda27c5ba92d10bbd885980ca4}} 
+\mbox{\hyperlink{class_vertex}{Vertex}} {\bfseries dst}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic geometric \mbox{\hyperlink{class_edge}{Edge}} class to store endpoints of edges. 
+
+This class stores the 2 \mbox{\hyperlink{class_vertex}{Vertex}} type objects to represent an edge. Directionality is N\+OT assumed. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_edge_a3106b11d60125009dbf7a738ce540fdf}\label{class_edge_a3106b11d60125009dbf7a738ce540fdf}} 
+\index{Edge@{Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!Edge@{Edge}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Edge\+::\+Edge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new empty \mbox{\hyperlink{class_edge}{Edge}} object. 
+
+\mbox{\Hypertarget{class_edge_a95c8e46ae62e05d5e75c41e061f298b5}\label{class_edge_a95c8e46ae62e05d5e75c41e061f298b5}} 
+\index{Edge@{Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!Edge@{Edge}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \&}]{source,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \&}]{destination }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_edge}{Edge}} object from given vertices. 
+
+To construct a \mbox{\hyperlink{class_edge}{Edge}} type object from 2 \mbox{\hyperlink{class_vertex}{Vertex}} object. The parameter names might be misleading, but it is guarenteed that no directionality is assumed
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & First \mbox{\hyperlink{class_vertex}{Vertex}} object \\
+\hline
+{\em destination} & Second \mbox{\hyperlink{class_vertex}{Vertex}} object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_edge_a7dc18beb505404bea34bc7a22de5235a}\label{class_edge_a7dc18beb505404bea34bc7a22de5235a}} 
+\index{Edge@{Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!Edge@{Edge}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{float}]{x1,  }\item[{float}]{y1,  }\item[{float}]{x2,  }\item[{float}]{y2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_edge}{Edge}} object from vertex coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & x coordinate of first vertex \\
+\hline
+{\em y1} & y coordinate of first vertex \\
+\hline
+{\em x2} & x coordinate of second vertex \\
+\hline
+{\em y2} & y coordinate of second vertex \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_edge_ac536795f4bf8819f67eaad00ad19d4bf}\label{class_edge_ac536795f4bf8819f67eaad00ad19d4bf}} 
+\index{Edge@{Edge}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Edge@{Edge}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Edge\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_edge}{Edge}} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+To overload != operator on \mbox{\hyperlink{class_edge}{Edge}} type objects. 
+
+This returns N\+OT of the == overloaded operator
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \mbox{\hyperlink{class_edge}{Edge}} object to be compared with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the edge does not match 
+
+false if the edge matches 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_edge_ae7d4e4cdbf2023b9dfa1c8162ace412f}\label{class_edge_ae7d4e4cdbf2023b9dfa1c8162ace412f}} 
+\index{Edge@{Edge}!operator==@{operator==}}
+\index{operator==@{operator==}!Edge@{Edge}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Edge\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_edge}{Edge}} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+To overload == operator on \mbox{\hyperlink{class_edge}{Edge}} type objects. 
+
+This returns true only if both endpoints match between the objects being compared. The order is considered to be important as we want to know if its the same edge or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \mbox{\hyperlink{class_edge}{Edge}} object to be compared with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the edge matches 
+
+false otherwise 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_geometry_8h}{Geometry.\+h}}\end{DoxyCompactItemize}

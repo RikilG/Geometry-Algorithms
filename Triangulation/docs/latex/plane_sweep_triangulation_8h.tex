@@ -1,0 +1,48 @@
+\hypertarget{plane_sweep_triangulation_8h}{}\doxysection{plane\+Sweep\+Triangulation.\+h File Reference}
+\label{plane_sweep_triangulation_8h}\index{planeSweepTriangulation.h@{planeSweepTriangulation.h}}
+
+
+This file provides the wrapper function to monotone triangulate a polygon.  
+
+
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}Geometry.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}monotone\+Subdivision.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}monotone\+Triangulation.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{class_triangle}{Triangle}} $>$ \mbox{\hyperlink{plane_sweep_triangulation_8h_ad399a158eabb93d873b54a3efee684c5}{plane\+Sweep\+Triangulate}} (vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ input)
+\begin{DoxyCompactList}\small\item\em The wrapper method to monotone triangulate a polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides the wrapper function to monotone triangulate a polygon. 
+
+\begin{DoxyAuthor}{Author}
+Rikil Gajarla (\href{mailto:f20170202@hyderabad.bits-pilani.ac.in}{\texttt{ f20170202@hyderabad.\+bits-\/pilani.\+ac.\+in}}) 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{plane_sweep_triangulation_8h_ad399a158eabb93d873b54a3efee684c5}\label{plane_sweep_triangulation_8h_ad399a158eabb93d873b54a3efee684c5}} 
+\index{planeSweepTriangulation.h@{planeSweepTriangulation.h}!planeSweepTriangulate@{planeSweepTriangulate}}
+\index{planeSweepTriangulate@{planeSweepTriangulate}!planeSweepTriangulation.h@{planeSweepTriangulation.h}}
+\doxysubsubsection{\texorpdfstring{planeSweepTriangulate()}{planeSweepTriangulate()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_triangle}{Triangle}}$>$ plane\+Sweep\+Triangulate (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$}]{input }\end{DoxyParamCaption})}
+
+
+
+The wrapper method to monotone triangulate a polygon. 
+
+This function internally calls \mbox{\hyperlink{monotone_subdivision_8h_ae5251d1bb7a8c8663dd71232d7dc0461}{get\+Monotones()}} and \mbox{\hyperlink{monotone_triangulation_8h_af4f45347a947b39c14197f6374f7c60e}{monotone\+Triangulate()}} functions to get the triangulations
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & List of Vertices of Polygons present in clockwise order \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Triangle$>$ List of \mbox{\hyperlink{class_triangle}{Triangle}} objects representing the triangulation of polygon 
+\end{DoxyReturn}

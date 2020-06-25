@@ -1,0 +1,184 @@
+\hypertarget{monotone_triangulation_8h}{}\doxysection{monotone\+Triangulation.\+h File Reference}
+\label{monotone_triangulation_8h}\index{monotoneTriangulation.h@{monotoneTriangulation.h}}
+
+
+This file contains the method to triangulate a monotone polygon.  
+
+
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include \char`\"{}Geometry.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Tools.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \mbox{\hyperlink{monotone_triangulation_8h_ae923f367148516d553acefa220a7add2}{get\+Top\+Chain}} (vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \&sorted, vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \&original)
+\begin{DoxyCompactList}\small\item\em Get the Top Chain of the monotone polygon. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \mbox{\hyperlink{monotone_triangulation_8h_abbc7d60e289c1f03c16fb5a497d7e9da}{get\+Bottom\+Chain}} (vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \&sorted, vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \&original)
+\begin{DoxyCompactList}\small\item\em Get the Bottom Chain of the monotone polygon. \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \mbox{\hyperlink{monotone_triangulation_8h_a93cdf3e4ac84b66f9df5d14978b69f6d}{preprocess}} (vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ input, \mbox{\hyperlink{class_vertex}{Vertex}} \&left, \mbox{\hyperlink{class_vertex}{Vertex}} \&right)
+\begin{DoxyCompactList}\small\item\em Assign top or bottom to each vertex and sort them w.\+r.\+t x-\/axis. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{monotone_triangulation_8h_ae82abc6e9bdd06fd29c4f4f0bb97deba}{valid\+Triangle}} (\mbox{\hyperlink{class_vertex}{Vertex}} \&a, \mbox{\hyperlink{class_vertex}{Vertex}} \&b, \mbox{\hyperlink{class_vertex}{Vertex}} \&c, bool mid\+Side)
+\begin{DoxyCompactList}\small\item\em Check if the triangle formed by the vertices is valid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex}{Vertex}} \mbox{\hyperlink{monotone_triangulation_8h_a47016198f865f8ef2df78ffd36d6a245}{find\+Min}} (const vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \&input)
+\begin{DoxyCompactList}\small\item\em Get the minimum \mbox{\hyperlink{class_vertex}{Vertex}} (based on the x-\/axis) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex}{Vertex}} \mbox{\hyperlink{monotone_triangulation_8h_abfb6fc52d2dd4a536ce6da52c3871414}{find\+Max}} (const vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \&input)
+\begin{DoxyCompactList}\small\item\em Get the maximum \mbox{\hyperlink{class_vertex}{Vertex}} (based on the x-\/axis) \end{DoxyCompactList}\item 
+vector$<$ \mbox{\hyperlink{class_triangle}{Triangle}} $>$ \mbox{\hyperlink{monotone_triangulation_8h_af4f45347a947b39c14197f6374f7c60e}{monotone\+Triangulate}} (vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ input)
+\begin{DoxyCompactList}\small\item\em This method performs the triangulation of the given monotone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the method to triangulate a monotone polygon. 
+
+\begin{DoxyAuthor}{Author}
+Rikil Gajarla (\href{mailto:f20170202@hyderabad.bits-pilani.ac.in}{\texttt{ f20170202@hyderabad.\+bits-\/pilani.\+ac.\+in}}) 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{monotone_triangulation_8h_abfb6fc52d2dd4a536ce6da52c3871414}\label{monotone_triangulation_8h_abfb6fc52d2dd4a536ce6da52c3871414}} 
+\index{monotoneTriangulation.h@{monotoneTriangulation.h}!findMax@{findMax}}
+\index{findMax@{findMax}!monotoneTriangulation.h@{monotoneTriangulation.h}}
+\doxysubsubsection{\texorpdfstring{findMax()}{findMax()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vertex}{Vertex}} find\+Max (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Get the maximum \mbox{\hyperlink{class_vertex}{Vertex}} (based on the x-\/axis) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & List of vertices of polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_vertex}{Vertex}} The maximum vertex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{monotone_triangulation_8h_a47016198f865f8ef2df78ffd36d6a245}\label{monotone_triangulation_8h_a47016198f865f8ef2df78ffd36d6a245}} 
+\index{monotoneTriangulation.h@{monotoneTriangulation.h}!findMin@{findMin}}
+\index{findMin@{findMin}!monotoneTriangulation.h@{monotoneTriangulation.h}}
+\doxysubsubsection{\texorpdfstring{findMin()}{findMin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vertex}{Vertex}} find\+Min (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Get the minimum \mbox{\hyperlink{class_vertex}{Vertex}} (based on the x-\/axis) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & List of vertices of polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_vertex}{Vertex}} The minimum vertex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{monotone_triangulation_8h_abbc7d60e289c1f03c16fb5a497d7e9da}\label{monotone_triangulation_8h_abbc7d60e289c1f03c16fb5a497d7e9da}} 
+\index{monotoneTriangulation.h@{monotoneTriangulation.h}!getBottomChain@{getBottomChain}}
+\index{getBottomChain@{getBottomChain}!monotoneTriangulation.h@{monotoneTriangulation.h}}
+\doxysubsubsection{\texorpdfstring{getBottomChain()}{getBottomChain()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_vertex}{Vertex}}$>$ get\+Bottom\+Chain (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \&}]{sorted,  }\item[{vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \&}]{original }\end{DoxyParamCaption})}
+
+
+
+Get the Bottom Chain of the monotone polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sorted} & Vertices of polygon sorted w.\+r.\+t x-\/axis \\
+\hline
+{\em original} & unmodified clockwise ordering of vertices of polygon as given by the user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Vertex$>$ List of vertices present on the bottom chain of monotone 
+\end{DoxyReturn}
+\mbox{\Hypertarget{monotone_triangulation_8h_ae923f367148516d553acefa220a7add2}\label{monotone_triangulation_8h_ae923f367148516d553acefa220a7add2}} 
+\index{monotoneTriangulation.h@{monotoneTriangulation.h}!getTopChain@{getTopChain}}
+\index{getTopChain@{getTopChain}!monotoneTriangulation.h@{monotoneTriangulation.h}}
+\doxysubsubsection{\texorpdfstring{getTopChain()}{getTopChain()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_vertex}{Vertex}}$>$ get\+Top\+Chain (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \&}]{sorted,  }\item[{vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \&}]{original }\end{DoxyParamCaption})}
+
+
+
+Get the Top Chain of the monotone polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sorted} & Vertices of polygon sorted w.\+r.\+t x-\/axis \\
+\hline
+{\em original} & unmodified clockwise ordering of vertices of polygon as given by the user \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Vertex$>$ List of vertices present on the top chain of monotone 
+\end{DoxyReturn}
+\mbox{\Hypertarget{monotone_triangulation_8h_af4f45347a947b39c14197f6374f7c60e}\label{monotone_triangulation_8h_af4f45347a947b39c14197f6374f7c60e}} 
+\index{monotoneTriangulation.h@{monotoneTriangulation.h}!monotoneTriangulate@{monotoneTriangulate}}
+\index{monotoneTriangulate@{monotoneTriangulate}!monotoneTriangulation.h@{monotoneTriangulation.h}}
+\doxysubsubsection{\texorpdfstring{monotoneTriangulate()}{monotoneTriangulate()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_triangle}{Triangle}}$>$ monotone\+Triangulate (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$}]{input }\end{DoxyParamCaption})}
+
+
+
+This method performs the triangulation of the given monotone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & List of vertices present on the monotone in clockwise order \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Triangle$>$ List of \mbox{\hyperlink{class_triangle}{Triangle}} objects produced after triangulating the monotone 
+\end{DoxyReturn}
+\mbox{\Hypertarget{monotone_triangulation_8h_a93cdf3e4ac84b66f9df5d14978b69f6d}\label{monotone_triangulation_8h_a93cdf3e4ac84b66f9df5d14978b69f6d}} 
+\index{monotoneTriangulation.h@{monotoneTriangulation.h}!preprocess@{preprocess}}
+\index{preprocess@{preprocess}!monotoneTriangulation.h@{monotoneTriangulation.h}}
+\doxysubsubsection{\texorpdfstring{preprocess()}{preprocess()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_vertex}{Vertex}}$>$ preprocess (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$}]{input,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \&}]{left,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \&}]{right }\end{DoxyParamCaption})}
+
+
+
+Assign top or bottom to each vertex and sort them w.\+r.\+t x-\/axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & List of vertices representing the clockwise ordering of polygon vertices \\
+\hline
+{\em left} & The left most \mbox{\hyperlink{class_vertex}{Vertex}} present on the polygon \\
+\hline
+{\em right} & The right most \mbox{\hyperlink{class_vertex}{Vertex}} present on the polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Vertex$>$ x-\/axis soreted list of Vertices of the polygon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{monotone_triangulation_8h_ae82abc6e9bdd06fd29c4f4f0bb97deba}\label{monotone_triangulation_8h_ae82abc6e9bdd06fd29c4f4f0bb97deba}} 
+\index{monotoneTriangulation.h@{monotoneTriangulation.h}!validTriangle@{validTriangle}}
+\index{validTriangle@{validTriangle}!monotoneTriangulation.h@{monotoneTriangulation.h}}
+\doxysubsubsection{\texorpdfstring{validTriangle()}{validTriangle()}}
+{\footnotesize\ttfamily bool valid\+Triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \&}]{a,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \&}]{b,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \&}]{c,  }\item[{bool}]{mid\+Side }\end{DoxyParamCaption})}
+
+
+
+Check if the triangle formed by the vertices is valid. 
+
+A triangle is said to be valid only if it completely exists inside the polygon
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First \mbox{\hyperlink{class_vertex}{Vertex}} \\
+\hline
+{\em b} & Second \mbox{\hyperlink{class_vertex}{Vertex}} \\
+\hline
+{\em c} & Third \mbox{\hyperlink{class_vertex}{Vertex}} \\
+\hline
+{\em mid\+Side} & Side of the middle vertex (top or bottom as set in the tag of \mbox{\hyperlink{class_vertex}{Vertex}}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If the triangle formed is valid 
+
+false otherwise 
+\end{DoxyReturn}

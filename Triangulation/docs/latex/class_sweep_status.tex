@@ -1,0 +1,141 @@
+\hypertarget{class_sweep_status}{}\doxysection{Sweep\+Status Class Reference}
+\label{class_sweep_status}\index{SweepStatus@{SweepStatus}}
+
+
+This class represents the sweep line status for the plane sweep algorithm.  
+
+
+
+
+{\ttfamily \#include $<$monotone\+Subdivision.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sweep_status_a9a7e087c493e0612e94993440d88e1cc}{Sweep\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Sweep Line Status object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex}{Vertex}} \mbox{\hyperlink{class_sweep_status_a4b048762480f359922b9ee69e6792e83}{helper}} (\mbox{\hyperlink{class_edge}{Edge}} \&e)
+\begin{DoxyCompactList}\small\item\em get the helper \mbox{\hyperlink{class_vertex}{Vertex}} of the given \mbox{\hyperlink{class_edge}{Edge}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sweep_status_a7c5bf0256d5ad9838715c8d734e73dc0}{set\+Helper}} (\mbox{\hyperlink{class_edge}{Edge}} e, \mbox{\hyperlink{class_vertex}{Vertex}} v)
+\begin{DoxyCompactList}\small\item\em Set the helper \mbox{\hyperlink{class_vertex}{Vertex}} for given \mbox{\hyperlink{class_edge}{Edge}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sweep_status_a7e6da1d126deff7ebbc7d60f1b2ff548}{insert}} (const \mbox{\hyperlink{class_edge}{Edge}} \&e, const \mbox{\hyperlink{class_vertex}{Vertex}} \&\mbox{\hyperlink{class_sweep_status_a4b048762480f359922b9ee69e6792e83}{helper}})
+\begin{DoxyCompactList}\small\item\em Insert a new \mbox{\hyperlink{class_edge}{Edge}} and its helper into the Sweep Line Status. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge}{Edge}} \mbox{\hyperlink{class_sweep_status_aa78bf5d75f84c160f25c67f6505a4a55}{get\+Upper}} (const \mbox{\hyperlink{class_vertex}{Vertex}} \&v)
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{class_edge}{Edge}} which is immediately above the given \mbox{\hyperlink{class_vertex}{Vertex}} in the polygon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sweep_status_a813afcf641e4a7ed2d11cdff259a86ea}{remove}} (const \mbox{\hyperlink{class_edge}{Edge}} \&e)
+\begin{DoxyCompactList}\small\item\em Remove the given \mbox{\hyperlink{class_edge}{Edge}} from the Sweep Line Status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class represents the sweep line status for the plane sweep algorithm. 
+
+This class stores the edges which are intersecting with the plane at the current position. the Edges are ordered based on increasing y coordinate. Provides methods to insert, delete and fetch the intersecting edges 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sweep_status_a9a7e087c493e0612e94993440d88e1cc}\label{class_sweep_status_a9a7e087c493e0612e94993440d88e1cc}} 
+\index{SweepStatus@{SweepStatus}!SweepStatus@{SweepStatus}}
+\index{SweepStatus@{SweepStatus}!SweepStatus@{SweepStatus}}
+\doxysubsubsection{\texorpdfstring{SweepStatus()}{SweepStatus()}}
+{\footnotesize\ttfamily Sweep\+Status\+::\+Sweep\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Sweep Line Status object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sweep_status_aa78bf5d75f84c160f25c67f6505a4a55}\label{class_sweep_status_aa78bf5d75f84c160f25c67f6505a4a55}} 
+\index{SweepStatus@{SweepStatus}!getUpper@{getUpper}}
+\index{getUpper@{getUpper}!SweepStatus@{SweepStatus}}
+\doxysubsubsection{\texorpdfstring{getUpper()}{getUpper()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_edge}{Edge}} Sweep\+Status\+::get\+Upper (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the \mbox{\hyperlink{class_edge}{Edge}} which is immediately above the given \mbox{\hyperlink{class_vertex}{Vertex}} in the polygon. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_vertex}{Vertex}} whose upper \mbox{\hyperlink{class_edge}{Edge}} is required \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_edge}{Edge}} The edge immediately above \mbox{\hyperlink{class_vertex}{Vertex}} v 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sweep_status_a4b048762480f359922b9ee69e6792e83}\label{class_sweep_status_a4b048762480f359922b9ee69e6792e83}} 
+\index{SweepStatus@{SweepStatus}!helper@{helper}}
+\index{helper@{helper}!SweepStatus@{SweepStatus}}
+\doxysubsubsection{\texorpdfstring{helper()}{helper()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vertex}{Vertex}} Sweep\+Status\+::helper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{Edge}} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the helper \mbox{\hyperlink{class_vertex}{Vertex}} of the given \mbox{\hyperlink{class_edge}{Edge}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \mbox{\hyperlink{class_edge}{Edge}} to which we need the helper for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_vertex}{Vertex}} The helper vertex of the given edge\+: helper(e) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_sweep_status_a7e6da1d126deff7ebbc7d60f1b2ff548}\label{class_sweep_status_a7e6da1d126deff7ebbc7d60f1b2ff548}} 
+\index{SweepStatus@{SweepStatus}!insert@{insert}}
+\index{insert@{insert}!SweepStatus@{SweepStatus}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Sweep\+Status\+::insert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_edge}{Edge}} \&}]{e,  }\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{helper }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insert a new \mbox{\hyperlink{class_edge}{Edge}} and its helper into the Sweep Line Status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \mbox{\hyperlink{class_edge}{Edge}} to insert into status \\
+\hline
+{\em helper} & helper \mbox{\hyperlink{class_vertex}{Vertex}} of given \mbox{\hyperlink{class_edge}{Edge}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sweep_status_a813afcf641e4a7ed2d11cdff259a86ea}\label{class_sweep_status_a813afcf641e4a7ed2d11cdff259a86ea}} 
+\index{SweepStatus@{SweepStatus}!remove@{remove}}
+\index{remove@{remove}!SweepStatus@{SweepStatus}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Sweep\+Status\+::remove (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_edge}{Edge}} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove the given \mbox{\hyperlink{class_edge}{Edge}} from the Sweep Line Status. 
+
+This operation can be done preferably when the sweep line/plane is no longer intersecting with the \mbox{\hyperlink{class_edge}{Edge}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \mbox{\hyperlink{class_edge}{Edge}} to be removed from the status \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_sweep_status_a7c5bf0256d5ad9838715c8d734e73dc0}\label{class_sweep_status_a7c5bf0256d5ad9838715c8d734e73dc0}} 
+\index{SweepStatus@{SweepStatus}!setHelper@{setHelper}}
+\index{setHelper@{setHelper}!SweepStatus@{SweepStatus}}
+\doxysubsubsection{\texorpdfstring{setHelper()}{setHelper()}}
+{\footnotesize\ttfamily void Sweep\+Status\+::set\+Helper (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_edge}{Edge}}}]{e,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the helper \mbox{\hyperlink{class_vertex}{Vertex}} for given \mbox{\hyperlink{class_edge}{Edge}}. 
+
+set\+Helper sets helper(e) = v.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & \mbox{\hyperlink{class_edge}{Edge}} for which helper must be assigned \\
+\hline
+{\em v} & \mbox{\hyperlink{class_vertex}{Vertex}} to be assigned as helper \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{monotone_subdivision_8h}{monotone\+Subdivision.\+h}}\end{DoxyCompactItemize}

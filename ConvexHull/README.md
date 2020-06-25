@@ -137,7 +137,7 @@ which has high concentration of points (~2.1K) in the center, whereas other rand
 generated datasets (for example: [3000.txt](./datasets/3000.txt))have a uniform 
 distribution of points (the python random number generator uses an underlying uniform 
 distribution). From this we can assume that: independant of positioning of points, 
-our algorithm takes approximately the same time to compute the convex hull. 
+our algorithm takes approximately the same time to compute the convex hull.
 
 ## Conclusion
 

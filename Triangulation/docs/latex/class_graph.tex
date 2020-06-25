@@ -1,0 +1,127 @@
+\hypertarget{class_graph}{}\doxysection{Graph Class Reference}
+\label{class_graph}\index{Graph@{Graph}}
+
+
+This class stores the graph representation of the input polygon.  
+
+
+
+
+{\ttfamily \#include $<$monotone\+Subdivision.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graph_a07b1d1a596645c306c9571ff8c869c43}{Graph}} (vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \&input)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_graph}{Graph}} object from the clockwise ordering of vertices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_a88dd218844b6e53a4df102c3f83fb350}{connect}} (const \mbox{\hyperlink{class_vertex}{Vertex}} \&u, const \mbox{\hyperlink{class_vertex}{Vertex}} \&v)
+\begin{DoxyCompactList}\small\item\em connect or draw diagonal to the given Vertices \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex}{Vertex}} \mbox{\hyperlink{class_graph_a133da3d6d1cac0f713cdcd1695dfc943}{prev}} (\mbox{\hyperlink{class_vertex}{Vertex}} \&v)
+\begin{DoxyCompactList}\small\item\em The previous vertex to the given vertex in the clockwise ordering. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex}{Vertex}} \mbox{\hyperlink{class_graph_add00d353ed5c5681289e702fa494fea7}{next}} (\mbox{\hyperlink{class_vertex}{Vertex}} \&v)
+\begin{DoxyCompactList}\small\item\em The next vertex to the given vertex in the clockwise ordering. \end{DoxyCompactList}\item 
+list$<$ vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ $>$ \mbox{\hyperlink{class_graph_a6c25a0e800c1d7914bc06b8c10bca83b}{get\+Sub\+Polygons}} ()
+\begin{DoxyCompactList}\small\item\em Get the Sub Polygons of the \mbox{\hyperlink{class_graph}{Graph}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_graph_a66030e868a57c1f58c709d8aa342cff4}\label{class_graph_a66030e868a57c1f58c709d8aa342cff4}} 
+vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ {\bfseries original}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class stores the graph representation of the input polygon. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_graph_a07b1d1a596645c306c9571ff8c869c43}\label{class_graph_a07b1d1a596645c306c9571ff8c869c43}} 
+\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{Graph()}{Graph()}}
+{\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \&}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_graph}{Graph}} object from the clockwise ordering of vertices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & input vertices of polygon as given in clockwise order \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graph_a88dd218844b6e53a4df102c3f83fb350}\label{class_graph_a88dd218844b6e53a4df102c3f83fb350}} 
+\index{Graph@{Graph}!connect@{connect}}
+\index{connect@{connect}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily void Graph\+::connect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{u,  }\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+connect or draw diagonal to the given Vertices 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & First \mbox{\hyperlink{class_vertex}{Vertex}} \\
+\hline
+{\em v} & Second \mbox{\hyperlink{class_vertex}{Vertex}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graph_a6c25a0e800c1d7914bc06b8c10bca83b}\label{class_graph_a6c25a0e800c1d7914bc06b8c10bca83b}} 
+\index{Graph@{Graph}!getSubPolygons@{getSubPolygons}}
+\index{getSubPolygons@{getSubPolygons}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{getSubPolygons()}{getSubPolygons()}}
+{\footnotesize\ttfamily list$<$vector$<$\mbox{\hyperlink{class_vertex}{Vertex}}$>$ $>$ Graph\+::get\+Sub\+Polygons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Sub Polygons of the \mbox{\hyperlink{class_graph}{Graph}} object. 
+
+This function returns all the sub polygons which resulted after drawing diagonals excluding the original polygon itself. In case no diagonals have been drawn, it returns an empty list.
+
+\begin{DoxyReturn}{Returns}
+list$<$vector$<$\+Vertex$>$$>$ List of sub polygons (cloclwise ordering of points in each polygon) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_add00d353ed5c5681289e702fa494fea7}\label{class_graph_add00d353ed5c5681289e702fa494fea7}} 
+\index{Graph@{Graph}!next@{next}}
+\index{next@{next}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vertex}{Vertex}} Graph\+::next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The next vertex to the given vertex in the clockwise ordering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_vertex}{Vertex}} to which we need next vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_vertex}{Vertex}} The next \mbox{\hyperlink{class_vertex}{Vertex}} to the given vertex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_a133da3d6d1cac0f713cdcd1695dfc943}\label{class_graph_a133da3d6d1cac0f713cdcd1695dfc943}} 
+\index{Graph@{Graph}!prev@{prev}}
+\index{prev@{prev}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{prev()}{prev()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vertex}{Vertex}} Graph\+::prev (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The previous vertex to the given vertex in the clockwise ordering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_vertex}{Vertex}} to which we need previous vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_vertex}{Vertex}} The previous \mbox{\hyperlink{class_vertex}{Vertex}} to the given vertex 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{monotone_subdivision_8h}{monotone\+Subdivision.\+h}}\end{DoxyCompactItemize}

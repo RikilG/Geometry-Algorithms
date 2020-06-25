@@ -1,0 +1,144 @@
+\hypertarget{_tools_8h}{}\doxysection{Tools.\+h File Reference}
+\label{_tools_8h}\index{Tools.h@{Tools.h}}
+
+
+The main purpose of this file is to provide a data input function.  
+
+
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}Geometry.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{_tools_8h_a0ac21b8452885a319b75d50165be261f}{det}} (const \mbox{\hyperlink{class_vertex}{Vertex}} \&u, const \mbox{\hyperlink{class_vertex}{Vertex}} \&v)
+\begin{DoxyCompactList}\small\item\em Compute the determinant of the given triangle or the cross product to the given vectors. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_tools_8h_afd47800503810aff2bc37631d826eb4c}{dist}} (\mbox{\hyperlink{class_vertex}{Vertex}} const \&u, \mbox{\hyperlink{class_vertex}{Vertex}} const \&v)
+\begin{DoxyCompactList}\small\item\em Compute the distance between given points. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_tools_8h_a796905f8009df2ffd838c548ae15ee4c}{orient}} (const \mbox{\hyperlink{class_vertex}{Vertex}} \&p, const \mbox{\hyperlink{class_vertex}{Vertex}} \&q, const \mbox{\hyperlink{class_vertex}{Vertex}} \&r)
+\begin{DoxyCompactList}\small\item\em To check the orientation of the given 3 points. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_tools_8h_ad9228c3603fe53eec8306e9285d185e0}{point\+In\+Triangle}} (\mbox{\hyperlink{class_vertex}{Vertex}} a, \mbox{\hyperlink{class_vertex}{Vertex}} b, \mbox{\hyperlink{class_vertex}{Vertex}} c, \mbox{\hyperlink{class_vertex}{Vertex}} p)
+\begin{DoxyCompactList}\small\item\em Check if a point is present in the triangle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_tools_8h_a1063abcc378c651a34ca0940c0a43645}\label{_tools_8h_a1063abcc378c651a34ca0940c0a43645}} 
+void {\bfseries log} (string s)
+\item 
+vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $>$ \mbox{\hyperlink{_tools_8h_ac4bd0652569195f731eb940e136daf9a}{readvertices}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Read input vertices from stdin or from file (if provided in args) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main purpose of this file is to provide a data input function. 
+
+This file provides the read\+Points() function which helps to read file and take input from it. In case any file is not provided, It tries to take input from the user via stdin. some other functions like \mbox{\hyperlink{_tools_8h_a0ac21b8452885a319b75d50165be261f}{det()}}, \mbox{\hyperlink{_tools_8h_afd47800503810aff2bc37631d826eb4c}{dist()}}, and other triangle related helper functions are also present 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_tools_8h_a0ac21b8452885a319b75d50165be261f}\label{_tools_8h_a0ac21b8452885a319b75d50165be261f}} 
+\index{Tools.h@{Tools.h}!det@{det}}
+\index{det@{det}!Tools.h@{Tools.h}}
+\doxysubsubsection{\texorpdfstring{det()}{det()}}
+{\footnotesize\ttfamily double det (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{u,  }\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Compute the determinant of the given triangle or the cross product to the given vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & First \mbox{\hyperlink{class_vertex}{Vertex}} type object \\
+\hline
+{\em v} & Second \mbox{\hyperlink{class_vertex}{Vertex}} type object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double determinant or cross product 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_tools_8h_afd47800503810aff2bc37631d826eb4c}\label{_tools_8h_afd47800503810aff2bc37631d826eb4c}} 
+\index{Tools.h@{Tools.h}!dist@{dist}}
+\index{dist@{dist}!Tools.h@{Tools.h}}
+\doxysubsubsection{\texorpdfstring{dist()}{dist()}}
+{\footnotesize\ttfamily double dist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} const \&}]{u,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}} const \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Compute the distance between given points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & First \mbox{\hyperlink{class_vertex}{Vertex}} \\
+\hline
+{\em v} & Second \mbox{\hyperlink{class_vertex}{Vertex}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double distance between the \mbox{\hyperlink{class_vertex}{Vertex}} objects 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_tools_8h_a796905f8009df2ffd838c548ae15ee4c}\label{_tools_8h_a796905f8009df2ffd838c548ae15ee4c}} 
+\index{Tools.h@{Tools.h}!orient@{orient}}
+\index{orient@{orient}!Tools.h@{Tools.h}}
+\doxysubsubsection{\texorpdfstring{orient()}{orient()}}
+{\footnotesize\ttfamily int orient (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{p,  }\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{q,  }\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{r }\end{DoxyParamCaption})}
+
+
+
+To check the orientation of the given 3 points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Point object \\
+\hline
+{\em q} & Point object \\
+\hline
+{\em r} & Point object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Orientation\+: -\/1 if clockwise, +1 if counter-\/clockwise and 0 if colinear 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_tools_8h_ad9228c3603fe53eec8306e9285d185e0}\label{_tools_8h_ad9228c3603fe53eec8306e9285d185e0}} 
+\index{Tools.h@{Tools.h}!pointInTriangle@{pointInTriangle}}
+\index{pointInTriangle@{pointInTriangle}!Tools.h@{Tools.h}}
+\doxysubsubsection{\texorpdfstring{pointInTriangle()}{pointInTriangle()}}
+{\footnotesize\ttfamily bool point\+In\+Triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}}}]{a,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}}}]{b,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}}}]{c,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Check if a point is present in the triangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First \mbox{\hyperlink{class_vertex}{Vertex}} of the triangle \\
+\hline
+{\em b} & Second \mbox{\hyperlink{class_vertex}{Vertex}} of the triangle \\
+\hline
+{\em c} & Third \mbox{\hyperlink{class_vertex}{Vertex}} of the triangle \\
+\hline
+{\em p} & Vertex/\+Point to be checked if it lies inside the triangle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the point lies inside the triangle 
+
+false if the point does not lie inside the triangle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_tools_8h_ac4bd0652569195f731eb940e136daf9a}\label{_tools_8h_ac4bd0652569195f731eb940e136daf9a}} 
+\index{Tools.h@{Tools.h}!readvertices@{readvertices}}
+\index{readvertices@{readvertices}!Tools.h@{Tools.h}}
+\doxysubsubsection{\texorpdfstring{readvertices()}{readvertices()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_vertex}{Vertex}}$>$ readvertices (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Read input vertices from stdin or from file (if provided in args) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & no of command-\/line arguments \\
+\hline
+{\em argv} & command-\/line arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Vertex$>$ object containing the input points in the given order 
+\end{DoxyReturn}

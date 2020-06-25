@@ -36,14 +36,16 @@ The required input format for the algorithm to work correctly is:
 
 ## Output
 
-Each line of output contains the coordinates of points present on the convex hull in 
-clockwise order.  
+Output of the algorithm prints all the HalfEdges incident to each face by traversing 
+its representative half edges. All the faces outputed by the program can also be verified 
+by running it through the plotting diagram.  
 The last two lines of output show the time taken to take input in microseconds and the 
 time taken by the algorithm to compute DCEL (also in microseconds).
 
 ## Documentation and Report
 
-For the report, check the `Report` directory in the parent folder for both pdf and latex formats.
+For the report, check the `Report` directory in the parent folder for both pdf and 
+latex formats.
 
 Documentation of this algorithm, functions and classes can be found in the `docs` folder 
 in the current directory. Open the [index.html](./docs/html/index.html) file from the docs 
@@ -51,6 +53,7 @@ directory with your preferred browser to go through the documentation
 
 ## Performance Analysis
 
+This analysis does not include the time taken to show output on terminal. 
 Analysis is performed with a system running:
 
 - OS: Arch Linux (64Bit) running Linux Kernel version 5.7.2
@@ -110,6 +113,29 @@ get all the Vertex points of the corresponding face.
 
 ## Results
 
-O(V+E)
+This algorithm to construct a DCEL takes time complexity of O(V+E). From the 
+analysis of example dataset runtimes, we can easily see that increase in number 
+of vertices and edges directly leads to increase in DCEL construction time. 
+
+The output of the algorithm is direct traversal of representative edges of all
+faces present in the input. In the example of Hyderabad road network dataset, 
+it shows all the faces bounded by the roads. All faces might not be visible 
+directly as the road system branches without forming many faces. But as we zoom,
+the faces can be spotted between roads. 
 
 ## Conclusion
+
+The time complexity O(V+E) cannot be reduced further because to store the graph,
+it is required to traverse through all Vertices and Edges present in the graph.
+Although the current implementation only supports connected graphs, it can also be 
+extended to store disconnected components using techniques like hidden vertices. 
+
+From the above results, we can be sure that DCEL can be a good candidate data 
+structure for easy representation of planar graphs. But as every other data structure,
+even DCEL has it downfalls. The main one being the amount of Storage required to store. 
+The storage requirement can be further reduced if we only need to store Vertices or 
+Edges, but this does not give huge improvements. Also, as the size of DCEL increases,
+the time to add an extra edge increases in a linear fashion which might be bad based 
+on the application.DCEL is a simple data structure which helps to easily manupulate 
+the graph structre, but it might not be an appropriate choice for low memory 
+applications such as in embedded systems.
