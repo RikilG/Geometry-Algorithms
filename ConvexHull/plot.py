@@ -17,7 +17,7 @@ def plotPoly(file):
     ys = []
     for i in range(1, n+1):
         x, y = lines[i].split()
-        x, y = int(x), int(y)
+        x, y = float(x), float(y)
         xy.append([x, y])
         xs.append(x)
         ys.append(y)
@@ -32,8 +32,10 @@ def main(file):
     y = []
     xy = []
     for line in file:
+        print(line, end='')
         if not (line[0]=='(' or '0'<=line[0]<='9'): continue
         line = line.replace(',', ' ').replace('(', ' ').replace(')', ' ').split()
+        line = [ float(k) for k in line ]
         x.append(line[0])
         y.append(line[1])
         xy.append([line[0], line[1]])

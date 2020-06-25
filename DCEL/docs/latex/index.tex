@@ -1,0 +1,45 @@
+\hypertarget{index_Overview}{}\doxysection{Overview}\label{index_Overview}
+This program deals with building a \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} data strutcure to store any type of planar graph given in the input. ~\newline
+ {\bfseries{How it works}}~\newline
+ A simple overview of the construction of \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}}\+: ~\newline
+ Step 1\+: For each \mbox{\hyperlink{class_edge}{Edge}}, create two new Half\+Edges, assign their twins and put them in corresponding source/tail vertex lists ~\newline
+ Step 2\+: Sort all the Half\+Edges present at each \mbox{\hyperlink{class_vertex}{Vertex}} in clockwise order ~\newline
+ Step 3\+: For Every pair of Half\+Edges next to each other on a \mbox{\hyperlink{class_vertex}{Vertex}}, assign their next and prev pointers ~\newline
+ Step 4\+: Taking each \mbox{\hyperlink{class_half_edge}{Half\+Edge}}, if its face points to nullptr, create new face and assign to all Half\+Edges which can be obtained by traversing the next pointer. Set the represntative of \mbox{\hyperlink{class_face}{Face}} object to any of theese halfedges and add this face to the list of Faces present in the \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} ~\newline
+
+
+\DoxyHorRuler{0}
+ Steps to Compile and Run \+: ~\newline
+ 1) {\itshape cd} into the src directory ~\newline
+ 2) Run {\itshape g++ \mbox{\hyperlink{main_8cpp}{main.\+cpp}}} which generates an executable called {\itshape a.\+out} in the same directory ~\newline
+ 3) Run the executable using {\itshape ./a.out} (on linux) ~\newline
+ 3.\+1) The executable takes a dataset from command line argument. For example, to use an existing dataset, run {\itshape ./a.out ../datasets/1sq.txt} ~\newline
+ 3.\+2) If no command-\/line argument is given, it takes input from the shell directly (stdin) ~\newline
+
+
+~\newline
+ Performance of the algorithm is documented in the report~\newline
+\hypertarget{index_Input}{}\doxysubsection{Input}\label{index_Input}
+Input is given as follows\+:~\newline
+
+\begin{DoxyItemize}
+\item Input can be given both from file (via command-\/line args) or stdin ~\newline
+
+\item First line must contain the no of Edges to be taken as input by the program. ~\newline
+
+\item Each of next line must contain 4 integers, space seperated denoting the (x1, y1), (x2, y2) coordinates of endpoints of each edge. ~\newline
+
+\item Each coordinate must be of integer type in the range -\/10$^\wedge$8 to 10$^\wedge$8. ~\newline
+
+\item Number of coordinates must be less than 1 Billion. ~\newline
+
+\end{DoxyItemize}\hypertarget{index_Output}{}\doxysubsection{Output}\label{index_Output}
+
+\begin{DoxyItemize}
+\item The program prints all the Faces, Edges, Half\+Edges which are incident and present in the \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} structure to accurately show the representation of planar graph
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+ \hypertarget{index_Author}{}\doxysubsection{Author}\label{index_Author}
+The algorithm is implemented and documented by {\bfseries{Rikil Gajarla (2017A7\+P\+S0202H)}}. \DoxyHorRuler{0}
+ 

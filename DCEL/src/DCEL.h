@@ -14,25 +14,39 @@ bool compare(const HalfEdge *p, const HalfEdge *q) { // needs revision
     return p->angle > q->angle;
 }
 
+/**
+ * @class DCEL
+ * @brief The main class for the DCEL data structure
+ * 
+ * This is the main DCEL data structure. All basic geometric structures are created dynamically
+ * and stored as pointers so that all structures can refer to each other without extra storage.
+ * 
+ */
 class DCEL {
     private:
-        unsigned long totalFaces;
+        unsigned long totalFaces; /**< Total number of faces present in the current planar graph */
 
         Vertex* inSet(const Vertex &a) {
             for (auto &v: vertices)
-                if (v->x == a.x && v->y == a.y) return v;
+                if (*v == a) return v;
             return nullptr;
         }
 
     public:
-        map<Vertex *, vector<HalfEdge *>> heMap;
-        vector<Vertex *> vertices;
-        vector<Face *> faces;
+        map<Vertex *, vector<HalfEdge *>> heMap; /**< Hash Map to store list of HalfEdge objects incident at each vertex */
+        vector<Vertex *> vertices; /**< List of pointer to all available vertices */
+        vector<Face *> faces; /**< List of pointers to all abailable faces */
 
+        /**
+         * @brief Construct a new DCEL object form the input list of edges
+         * 
+         * @param edgelist a LIst of Edge objects which are used to build the DCEL structure
+         */
         DCEL(vector<Edge> &edgelist) {
             // For each edge,
             // Add half edge to the vertex list of its source
             for (Edge &edge: edgelist) {
+                // cout << "Processing: " << edge.src << " " << edge.dst << "\n";
                 Vertex *a = inSet(edge.src);
                 Vertex *b = inSet(edge.dst);
                 if (a == nullptr) {
@@ -93,6 +107,16 @@ class DCEL {
             // DCEL complete
         }
 
+        /**
+         * @brief Set a new Face object for the given HalfEdge
+         * 
+         * In case of new added HalfEdges, this function creates a face, traverses
+         * all the connected half edges and assigns the new face to all of them. Make 
+         * sure that the input halfedge has no face assigned, else it will be lost.
+         * This function assigns the input halfedge as the representative of the new face
+         * 
+         * @param he HalfEdge to which new face must be created ans assigned
+         */
         void setFace(HalfEdge* (&he)) {
             Face *f = new Face(totalFaces++, he); // create face
             faces.push_back(f); // add to list of faces
@@ -104,10 +128,24 @@ class DCEL {
             }
         }
 
+        /**
+         * @brief Get the pointer to Vertex object which matches/equals the given vertex
+         * 
+         * @param v Vertex object to which we need matching object in DCEL
+         * @return Vertex* pointer to matching Vertex object in DCEL. Returns nullptr in case of no matching vertex
+         */
         Vertex* getVertex(const Vertex &v) {
             return inSet(v);
         }
 
+        /**
+         * @brief Add a new Vertex object to the existing DCEL.
+         * 
+         * Addition of Vertex is only done if there is no similar/equal vertex existing in DCEL
+         * 
+         * @param v Pointer to Vertex object to be added
+         * @return Vertex* pointer to the added object in the DCEL
+         */
         Vertex* addVertex(Vertex *v) {
             Vertex *a = inSet(*v);
             if (a != nullptr) return a;
@@ -116,6 +154,15 @@ class DCEL {
             return v;
         }
 
+        /**
+         * @brief Add a new Vertex object to the existing DCEL.
+         * 
+         * Overloaded version of addVertex() function which takes a Vertex object instead
+         * of a pointer. This method builds a new Vertex object dynamically to store in DCEL
+         * 
+         * @param v Vertex object to be added
+         * @return Vertex* pointer to the added object in the DCEL
+         */
         Vertex* addVertex(Vertex v) {
             Vertex *a = inSet(v);
             if (a != nullptr) return a;
@@ -125,10 +172,30 @@ class DCEL {
             return a;
         }
 
+        /**
+         * @brief Add a new Vertex object to the existing DCEL.
+         * 
+         * Overloaded version of addVertex() function which takes coordinates vertex.
+         * This method builds a new Vertex object dynamically to store in DCEL
+         * 
+         * @param x x coordinate of the new vertex object
+         * @param y y coordinate of the new vertex object
+         * @return Vertex* pointer to the added object in the DCEL
+         */
         Vertex* addVertex(long x, long y) {
             return addVertex(Vertex(x, y));
         }
 
+        /**
+         * @brief Add a new Edge to the existing DCEL data structure
+         * 
+         * This method dynamically creates two new HalfEdge objects representing the input 
+         * Edge and sets all their attributes respectly. This method takes care to also create
+         * and assign new Faces (if formed) automatically.
+         * 
+         * @param a Vertex endpoint of the edge to be added
+         * @param b Vertex endpoint of the edge to be added
+         */
         void addEdge(Vertex *a, Vertex *b) {
             a = addVertex(a); // adds if not present
             b = addVertex(b); // adds if not present
@@ -172,6 +239,27 @@ class DCEL {
             setFace(ba);
         }
 
+        /**
+         * @brief Print the directional halfedges which surround the face
+         * 
+         * @param f Pointer to face object
+         */
+        void printBoundaryEdges(Face *f) {
+            HalfEdge *temp = f->rep;
+            do { // for all cyclic half-edges,
+                cout << *temp << "\n";
+                temp = temp->next;
+            } while (temp != f->rep);
+            cout << "\n";
+        }
+
+        /**
+         * @brief Destroy the DCEL object
+         * 
+         * This function deletes the DCEL data structure and all the 
+         * dynamically allocated objects present in this structure.
+         * 
+         */
         ~DCEL() { // free allocated memory
             for (auto &x : heMap) {
                 Vertex *v = x.first;

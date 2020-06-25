@@ -27,7 +27,7 @@ using namespace std;
  */
 int orient(const Point &p, const Point &q, const Point &r) {
     // counter clock wise: +ve: upward direction: +ve orient
-    long long x = ((q.x*(long long)r.y-r.x*(long long)q.y) - p.x*(long long)(r.y-q.y) + p.y*(long long)(r.x-q.x));
+    double x = ((q.x*(double)r.y-r.x*(double)q.y) - p.x*(double)(r.y-q.y) + p.y*(double)(r.x-q.x));
     if (x == 0) return 0;
     else return (x>0) ? 1 : -1 ;
 }
@@ -49,7 +49,7 @@ PointList readPoints(int argc, char *argv[]) {
     ifstream myfile;
     stringstream ss;
     string line;
-    long a, b;
+    double a, b;
     if (argc > 1) { // convert args to string from char*
         all_args.assign(argv + 1, argv + argc);
     }
@@ -65,7 +65,7 @@ PointList readPoints(int argc, char *argv[]) {
         cout << "Enter no of points: ";
         long n; cin >> n;
         cout << "Enter points as space seperated cordinates in each line\n";
-        for (long i=0;i<n;i++) {
+        for (unsigned long i=0;i<n;i++) {
             cin >> a >> b;
             points.emplace_back(a, b);
         }
@@ -83,7 +83,7 @@ PointList readPoints(int argc, char *argv[]) {
             getline(myfile, line);
             ss << line;
             ss >> n;
-            for (long long i=0;i<n;i++) {
+            for (unsigned long i=0;i<n;i++) {
                 getline(myfile, line);
                 ss.clear();
                 ss << line;

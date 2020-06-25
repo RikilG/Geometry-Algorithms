@@ -1,0 +1,105 @@
+\hypertarget{class_half_edge}{}\doxysection{Half\+Edge Class Reference}
+\label{class_half_edge}\index{HalfEdge@{HalfEdge}}
+
+
+Basic geometric \mbox{\hyperlink{class_face}{Face}} class to store a \mbox{\hyperlink{class_face}{Face}} structure.  
+
+
+
+
+{\ttfamily \#include $<$Geometry.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_half_edge_a7b848a010c5c8bf4cea7508ebe8018d8}{Half\+Edge}} (const \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$src, const \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$dst)
+\begin{DoxyCompactList}\small\item\em Construct a new Half \mbox{\hyperlink{class_edge}{Edge}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$ \mbox{\hyperlink{class_half_edge_a02bbf630ad01fd4d7bf4af38e286844e}{prev}}
+\item 
+\mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$ \mbox{\hyperlink{class_half_edge_a5918db069bb8b4a89e471c01a14fc6e1}{next}}
+\item 
+\mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$ \mbox{\hyperlink{class_half_edge_a37e7696a7131767a0c76e45ed69be4c5}{twin}}
+\item 
+const \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ \mbox{\hyperlink{class_half_edge_a2d2f7056e0f7c9c47a9840ec9bcd69c0}{tail}}
+\item 
+const \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ \mbox{\hyperlink{class_half_edge_a6ed97da810c7a1b24e6c9f9f43aad1d9}{head}}
+\item 
+\mbox{\hyperlink{class_face}{Face}} $\ast$ \mbox{\hyperlink{class_half_edge_a08080cb14f0da4274e47a56f24071196}{face}}
+\item 
+\mbox{\Hypertarget{class_half_edge_aa3ef967cdc7c6be2fe44ebd22b858519}\label{class_half_edge_aa3ef967cdc7c6be2fe44ebd22b858519}} 
+double {\bfseries angle}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic geometric \mbox{\hyperlink{class_face}{Face}} class to store a \mbox{\hyperlink{class_face}{Face}} structure. 
+
+Each \mbox{\hyperlink{class_edge}{Edge}} will be split into 2 Half\+Edges and hence, these are directional. Each \mbox{\hyperlink{class_half_edge}{Half\+Edge}} object has a next pointer, prev pointer, twin pointer, tail pointer, head pointer and face pointer to give a complete information about all its incident geometric objects. This class is the main component of the \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} structure. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_half_edge_a7b848a010c5c8bf4cea7508ebe8018d8}\label{class_half_edge_a7b848a010c5c8bf4cea7508ebe8018d8}} 
+\index{HalfEdge@{HalfEdge}!HalfEdge@{HalfEdge}}
+\index{HalfEdge@{HalfEdge}!HalfEdge@{HalfEdge}}
+\doxysubsubsection{\texorpdfstring{HalfEdge()}{HalfEdge()}}
+{\footnotesize\ttfamily Half\+Edge\+::\+Half\+Edge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{src,  }\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{dst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Half \mbox{\hyperlink{class_edge}{Edge}} object. 
+
+Construct a \mbox{\hyperlink{class_half_edge}{Half\+Edge}} object from the given 2 vertices. Note that directionality is important. First argument refers to the src/source/tail whereas the second argument refers to the dst/destination/head.
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & source or the tail \mbox{\hyperlink{class_vertex}{Vertex}} of the \mbox{\hyperlink{class_half_edge}{Half\+Edge}} \\
+\hline
+{\em dst} & destination or the head \mbox{\hyperlink{class_vertex}{Vertex}} of the \mbox{\hyperlink{class_half_edge}{Half\+Edge}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_half_edge_a08080cb14f0da4274e47a56f24071196}\label{class_half_edge_a08080cb14f0da4274e47a56f24071196}} 
+\index{HalfEdge@{HalfEdge}!face@{face}}
+\index{face@{face}!HalfEdge@{HalfEdge}}
+\doxysubsubsection{\texorpdfstring{face}{face}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_face}{Face}}$\ast$ Half\+Edge\+::face}
+
+prev-\/$>$face == face \&\& next-\/$>$face == face \mbox{\Hypertarget{class_half_edge_a6ed97da810c7a1b24e6c9f9f43aad1d9}\label{class_half_edge_a6ed97da810c7a1b24e6c9f9f43aad1d9}} 
+\index{HalfEdge@{HalfEdge}!head@{head}}
+\index{head@{head}!HalfEdge@{HalfEdge}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_vertex}{Vertex}}$\ast$ Half\+Edge\+::head}
+
+\mbox{\hyperlink{class_vertex}{Vertex}} present at head \mbox{\Hypertarget{class_half_edge_a5918db069bb8b4a89e471c01a14fc6e1}\label{class_half_edge_a5918db069bb8b4a89e471c01a14fc6e1}} 
+\index{HalfEdge@{HalfEdge}!next@{next}}
+\index{next@{next}!HalfEdge@{HalfEdge}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_half_edge}{Half\+Edge}}$\ast$ Half\+Edge\+::next}
+
+Pointer to next \mbox{\hyperlink{class_half_edge}{Half\+Edge}} such that\+: next-\/$>$prev = this \mbox{\Hypertarget{class_half_edge_a02bbf630ad01fd4d7bf4af38e286844e}\label{class_half_edge_a02bbf630ad01fd4d7bf4af38e286844e}} 
+\index{HalfEdge@{HalfEdge}!prev@{prev}}
+\index{prev@{prev}!HalfEdge@{HalfEdge}}
+\doxysubsubsection{\texorpdfstring{prev}{prev}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_half_edge}{Half\+Edge}}$\ast$ Half\+Edge\+::prev}
+
+Pointer to previous \mbox{\hyperlink{class_half_edge}{Half\+Edge}} such that\+: prev-\/$>$next = this \mbox{\Hypertarget{class_half_edge_a2d2f7056e0f7c9c47a9840ec9bcd69c0}\label{class_half_edge_a2d2f7056e0f7c9c47a9840ec9bcd69c0}} 
+\index{HalfEdge@{HalfEdge}!tail@{tail}}
+\index{tail@{tail}!HalfEdge@{HalfEdge}}
+\doxysubsubsection{\texorpdfstring{tail}{tail}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_vertex}{Vertex}}$\ast$ Half\+Edge\+::tail}
+
+\mbox{\hyperlink{class_vertex}{Vertex}} present at tail such that\+: twin-\/$>$next-\/$>$tail == tail \&\& prev-\/$>$twin-\/$>$tail == tail \mbox{\Hypertarget{class_half_edge_a37e7696a7131767a0c76e45ed69be4c5}\label{class_half_edge_a37e7696a7131767a0c76e45ed69be4c5}} 
+\index{HalfEdge@{HalfEdge}!twin@{twin}}
+\index{twin@{twin}!HalfEdge@{HalfEdge}}
+\doxysubsubsection{\texorpdfstring{twin}{twin}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_half_edge}{Half\+Edge}}$\ast$ Half\+Edge\+::twin}
+
+Pointer to the other twin of this edge such that\+: twin-\/$>$twin = this 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_geometry_8h}{Geometry.\+h}}\end{DoxyCompactItemize}

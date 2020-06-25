@@ -1,0 +1,92 @@
+\hypertarget{class_edge}{}\doxysection{Edge Class Reference}
+\label{class_edge}\index{Edge@{Edge}}
+
+
+Basic geometric \mbox{\hyperlink{class_edge}{Edge}} class to store endpoints of edges.  
+
+
+
+
+{\ttfamily \#include $<$Geometry.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_edge_a3106b11d60125009dbf7a738ce540fdf}{Edge}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new empty \mbox{\hyperlink{class_edge}{Edge}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge_a95c8e46ae62e05d5e75c41e061f298b5}{Edge}} (\mbox{\hyperlink{class_vertex}{Vertex}} \&source, \mbox{\hyperlink{class_vertex}{Vertex}} \&destination)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_edge}{Edge}} object from given vertices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_edge_a5ded42bb6f3d8969926f599a2c3c4727}{Edge}} (double x1, double y1, double x2, double y2)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_edge}{Edge}} object from vertex coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_edge_a2175ea3890dfbc06663fae49951d8980}\label{class_edge_a2175ea3890dfbc06663fae49951d8980}} 
+\mbox{\hyperlink{class_vertex}{Vertex}} {\bfseries src}
+\item 
+\mbox{\Hypertarget{class_edge_af5d854bda27c5ba92d10bbd885980ca4}\label{class_edge_af5d854bda27c5ba92d10bbd885980ca4}} 
+\mbox{\hyperlink{class_vertex}{Vertex}} {\bfseries dst}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic geometric \mbox{\hyperlink{class_edge}{Edge}} class to store endpoints of edges. 
+
+This class stores the 2 \mbox{\hyperlink{class_vertex}{Vertex}} type objects to represent an edge. Directionality is N\+OT assumed. For the case of directionality, \mbox{\hyperlink{class_half_edge}{Half\+Edge}} takes care of it. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_edge_a3106b11d60125009dbf7a738ce540fdf}\label{class_edge_a3106b11d60125009dbf7a738ce540fdf}} 
+\index{Edge@{Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!Edge@{Edge}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Edge\+::\+Edge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new empty \mbox{\hyperlink{class_edge}{Edge}} object. 
+
+\mbox{\Hypertarget{class_edge_a95c8e46ae62e05d5e75c41e061f298b5}\label{class_edge_a95c8e46ae62e05d5e75c41e061f298b5}} 
+\index{Edge@{Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!Edge@{Edge}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \&}]{source,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}} \&}]{destination }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_edge}{Edge}} object from given vertices. 
+
+To construct a \mbox{\hyperlink{class_edge}{Edge}} type object from 2 \mbox{\hyperlink{class_vertex}{Vertex}} object. The parameter names might be misleading, but it is guarenteed that no directionality is assumed
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & First \mbox{\hyperlink{class_vertex}{Vertex}} object \\
+\hline
+{\em destination} & Second \mbox{\hyperlink{class_vertex}{Vertex}} object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_edge_a5ded42bb6f3d8969926f599a2c3c4727}\label{class_edge_a5ded42bb6f3d8969926f599a2c3c4727}} 
+\index{Edge@{Edge}!Edge@{Edge}}
+\index{Edge@{Edge}!Edge@{Edge}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Edge\+::\+Edge (\begin{DoxyParamCaption}\item[{double}]{x1,  }\item[{double}]{y1,  }\item[{double}]{x2,  }\item[{double}]{y2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_edge}{Edge}} object from vertex coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & x coordinate of first vertex \\
+\hline
+{\em y1} & y coordinate of first vertex \\
+\hline
+{\em x2} & x coordinate of second vertex \\
+\hline
+{\em y2} & y coordinate of second vertex \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_geometry_8h}{Geometry.\+h}}\end{DoxyCompactItemize}

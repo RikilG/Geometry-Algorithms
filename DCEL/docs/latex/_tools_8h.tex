@@ -1,0 +1,77 @@
+\hypertarget{_tools_8h}{}\doxysection{Tools.\+h File Reference}
+\label{_tools_8h}\index{Tools.h@{Tools.h}}
+
+
+This file provides helper functions for reading input from the user.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}D\+C\+E\+L.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_tools_8h_a796905f8009df2ffd838c548ae15ee4c}{orient}} (const \mbox{\hyperlink{class_vertex}{Vertex}} \&p, const \mbox{\hyperlink{class_vertex}{Vertex}} \&q, const \mbox{\hyperlink{class_vertex}{Vertex}} \&r)
+\begin{DoxyCompactList}\small\item\em Return the clockwise or anti clockwise orientation of points. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_tools_8h_a1063abcc378c651a34ca0940c0a43645}\label{_tools_8h_a1063abcc378c651a34ca0940c0a43645}} 
+void {\bfseries log} (string s)
+\item 
+vector$<$ \mbox{\hyperlink{class_edge}{Edge}} $>$ \mbox{\hyperlink{_tools_8h_a2cdbb3d0744fef4400279d798245a5f2}{read\+Edges}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Helper to get input from the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides helper functions for reading input from the user. 
+
+\begin{DoxyAuthor}{Author}
+Rikil Gajarla (\href{mailto:f20170202@hyderabad.bits-pilani.ac.in}{\texttt{ f20170202@hyderabad.\+bits-\/pilani.\+ac.\+in}}) This file provides the read\+Points() function which helps to read file and take input from it. In case any file is not provided, It tries to take input from the user via stdin. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_tools_8h_a796905f8009df2ffd838c548ae15ee4c}\label{_tools_8h_a796905f8009df2ffd838c548ae15ee4c}} 
+\index{Tools.h@{Tools.h}!orient@{orient}}
+\index{orient@{orient}!Tools.h@{Tools.h}}
+\doxysubsubsection{\texorpdfstring{orient()}{orient()}}
+{\footnotesize\ttfamily int orient (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{p,  }\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{q,  }\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{r }\end{DoxyParamCaption})}
+
+
+
+Return the clockwise or anti clockwise orientation of points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & first \mbox{\hyperlink{class_vertex}{Vertex}} object \\
+\hline
+{\em q} & second \mbox{\hyperlink{class_vertex}{Vertex}} object \\
+\hline
+{\em r} & third \mbox{\hyperlink{class_vertex}{Vertex}} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int -\/1 if clockwise, +1 if anti-\/clockwise and 0 if colinear points 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_tools_8h_a2cdbb3d0744fef4400279d798245a5f2}\label{_tools_8h_a2cdbb3d0744fef4400279d798245a5f2}} 
+\index{Tools.h@{Tools.h}!readEdges@{readEdges}}
+\index{readEdges@{readEdges}!Tools.h@{Tools.h}}
+\doxysubsubsection{\texorpdfstring{readEdges()}{readEdges()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_edge}{Edge}}$>$ read\+Edges (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Helper to get input from the user. 
+
+If file path is given in command line argument, this function opens that file and reads input from it. In case no command line argument is given, It tries to take input from user (via stdin)
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command line arguments, to be passed from the main function \\
+\hline
+{\em argv} & Command line arguments given by the user, to be passed from the main function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector$<$\+Edge$>$ List of edges of present in the planar map, taken from user/file input 
+\end{DoxyReturn}

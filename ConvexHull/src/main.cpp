@@ -8,6 +8,7 @@
  */
 
 #include <chrono>
+#include <iostream>
 #include "Tools.h"
 #include "ConvexHull.h"
 
@@ -27,9 +28,9 @@ int main(int argc, char *argv[]) {
     auto lap2 = high_resolution_clock::now();
     
     // Print output points
+    cout << "Number of points on convex hull: " << output.size() << "\n";
     for (const Point &p: output)
         cout << p << "\n";
-    cout << "Number of points on convex hull: " << output.size() << "\n";
 
     // Print time analysis
     auto input_time = duration_cast<microseconds>(lap1 - start);

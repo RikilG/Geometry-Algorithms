@@ -1,0 +1,49 @@
+\hypertarget{_geometry_8h}{}\doxysection{Geometry.\+h File Reference}
+\label{_geometry_8h}\index{Geometry.h@{Geometry.h}}
+
+
+This file contains the basic geometric structure such as \mbox{\hyperlink{class_vertex}{Vertex}}, \mbox{\hyperlink{class_edge}{Edge}}, \mbox{\hyperlink{class_face}{Face}} and \mbox{\hyperlink{class_half_edge}{Half\+Edge}}.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_vertex}{Vertex}}
+\begin{DoxyCompactList}\small\item\em Basic geometric \mbox{\hyperlink{class_vertex}{Vertex}} class to store coordinates of vertex and halfedge. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_edge}{Edge}}
+\begin{DoxyCompactList}\small\item\em Basic geometric \mbox{\hyperlink{class_edge}{Edge}} class to store endpoints of edges. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_face}{Face}}
+\begin{DoxyCompactList}\small\item\em Basic geometric \mbox{\hyperlink{class_face}{Face}} class to store a \mbox{\hyperlink{class_face}{Face}} structure. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_half_edge}{Half\+Edge}}
+\begin{DoxyCompactList}\small\item\em Basic geometric \mbox{\hyperlink{class_face}{Face}} class to store a \mbox{\hyperlink{class_face}{Face}} structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_geometry_8h_a5f3a536001ceb5a627f78032d1ae69d5}\label{_geometry_8h_a5f3a536001ceb5a627f78032d1ae69d5}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&os, const \mbox{\hyperlink{class_half_edge}{Half\+Edge}} \&he)
+\item 
+\mbox{\Hypertarget{_geometry_8h_a1d0ef698d16dc51f80fcee095a1f5979}\label{_geometry_8h_a1d0ef698d16dc51f80fcee095a1f5979}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&os, const \mbox{\hyperlink{class_vertex}{Vertex}} \&v)
+\item 
+\mbox{\Hypertarget{_geometry_8h_a9f33fecfcff810dd3ad378d382ef02b2}\label{_geometry_8h_a9f33fecfcff810dd3ad378d382ef02b2}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&os, const \mbox{\hyperlink{class_edge}{Edge}} \&e)
+\item 
+\mbox{\Hypertarget{_geometry_8h_a38efa0f851ed6b50b4b82fe368a9b612}\label{_geometry_8h_a38efa0f851ed6b50b4b82fe368a9b612}} 
+ostream \& {\bfseries operator$<$$<$} (ostream \&os, const \mbox{\hyperlink{class_face}{Face}} \&f)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_geometry_8h_a985dde1a752d00d3f05ded2caab18353}\label{_geometry_8h_a985dde1a752d00d3f05ded2caab18353}} 
+const double {\bfseries epsillion} = 0.\+00001
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the basic geometric structure such as \mbox{\hyperlink{class_vertex}{Vertex}}, \mbox{\hyperlink{class_edge}{Edge}}, \mbox{\hyperlink{class_face}{Face}} and \mbox{\hyperlink{class_half_edge}{Half\+Edge}}. 
+
+\begin{DoxyAuthor}{Author}
+Rikil Gajarla (\href{mailto:f20170202@hyderabad.bits-pilani.ac.in}{\texttt{ f20170202@hyderabad.\+bits-\/pilani.\+ac.\+in}}) 
+\end{DoxyAuthor}

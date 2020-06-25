@@ -58,7 +58,7 @@ class PointList {
         }
 
         /// To provide interface to STL vector's emplace_back() function
-        auto emplace_back(long a, long b) {
+        auto emplace_back(double a, double b) {
             return pts.emplace_back(a, b);
         }
 

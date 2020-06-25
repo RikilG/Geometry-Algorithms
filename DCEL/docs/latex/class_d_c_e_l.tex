@@ -1,0 +1,234 @@
+\hypertarget{class_d_c_e_l}{}\doxysection{D\+C\+EL Class Reference}
+\label{class_d_c_e_l}\index{DCEL@{DCEL}}
+
+
+The main class for the \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} data structure.  
+
+
+
+
+{\ttfamily \#include $<$D\+C\+E\+L.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_c_e_l_a96ec80a351d68a499bf26c29c9b23b7c}{D\+C\+EL}} (vector$<$ \mbox{\hyperlink{class_edge}{Edge}} $>$ \&edgelist)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} object form the input list of edges. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_e_l_a7b78f6e67fde24dcfd176eec582ad232}{set\+Face}} (\mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$(\&he))
+\begin{DoxyCompactList}\small\item\em Set a new \mbox{\hyperlink{class_face}{Face}} object for the given \mbox{\hyperlink{class_half_edge}{Half\+Edge}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ \mbox{\hyperlink{class_d_c_e_l_aa422118ec64a42730c12a2a5a1c6763b}{get\+Vertex}} (const \mbox{\hyperlink{class_vertex}{Vertex}} \&v)
+\begin{DoxyCompactList}\small\item\em Get the pointer to \mbox{\hyperlink{class_vertex}{Vertex}} object which matches/equals the given vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ \mbox{\hyperlink{class_d_c_e_l_ad94dbc6e2498140919af56d73c42f91d}{add\+Vertex}} (\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$v)
+\begin{DoxyCompactList}\small\item\em Add a new \mbox{\hyperlink{class_vertex}{Vertex}} object to the existing \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ \mbox{\hyperlink{class_d_c_e_l_a0029c4806e99c6548cb928c93f97cff4}{add\+Vertex}} (\mbox{\hyperlink{class_vertex}{Vertex}} v)
+\begin{DoxyCompactList}\small\item\em Add a new \mbox{\hyperlink{class_vertex}{Vertex}} object to the existing \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ \mbox{\hyperlink{class_d_c_e_l_a995b3719e2839a8b479d577ca7195c14}{add\+Vertex}} (long x, long y)
+\begin{DoxyCompactList}\small\item\em Add a new \mbox{\hyperlink{class_vertex}{Vertex}} object to the existing \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_e_l_a147e5d98a0c1fbd02365c01c657a8baf}{add\+Edge}} (\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$a, \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Add a new \mbox{\hyperlink{class_edge}{Edge}} to the existing \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} data structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_c_e_l_a9e657ac5a900befb1b02d49a26347eec}{print\+Boundary\+Edges}} (\mbox{\hyperlink{class_face}{Face}} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Print the directional halfedges which surround the face. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_d_c_e_l_ae0b6558a9490df6e8ec0eb1a0fffbec8}{$\sim$\+D\+C\+EL}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$, vector$<$ \mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$ $>$ $>$ \mbox{\hyperlink{class_d_c_e_l_a0b789983672e5bb796a5f7ca78ca777a}{he\+Map}}
+\item 
+vector$<$ \mbox{\hyperlink{class_vertex}{Vertex}} $\ast$ $>$ \mbox{\hyperlink{class_d_c_e_l_a6339be2488749b653dc02bab4c1e5655}{vertices}}
+\item 
+vector$<$ \mbox{\hyperlink{class_face}{Face}} $\ast$ $>$ \mbox{\hyperlink{class_d_c_e_l_a0dfce903b2956a78c6aa143a2226365f}{faces}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main class for the \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} data structure. 
+
+This is the main \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} data structure. All basic geometric structures are created dynamically and stored as pointers so that all structures can refer to each other without extra storage. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_c_e_l_a96ec80a351d68a499bf26c29c9b23b7c}\label{class_d_c_e_l_a96ec80a351d68a499bf26c29c9b23b7c}} 
+\index{DCEL@{DCEL}!DCEL@{DCEL}}
+\index{DCEL@{DCEL}!DCEL@{DCEL}}
+\doxysubsubsection{\texorpdfstring{DCEL()}{DCEL()}}
+{\footnotesize\ttfamily D\+C\+E\+L\+::\+D\+C\+EL (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{class_edge}{Edge}} $>$ \&}]{edgelist }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} object form the input list of edges. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edgelist} & a L\+Ist of \mbox{\hyperlink{class_edge}{Edge}} objects which are used to build the \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} structure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_d_c_e_l_ae0b6558a9490df6e8ec0eb1a0fffbec8}\label{class_d_c_e_l_ae0b6558a9490df6e8ec0eb1a0fffbec8}} 
+\index{DCEL@{DCEL}!````~DCEL@{$\sim$DCEL}}
+\index{````~DCEL@{$\sim$DCEL}!DCEL@{DCEL}}
+\doxysubsubsection{\texorpdfstring{$\sim$DCEL()}{~DCEL()}}
+{\footnotesize\ttfamily D\+C\+E\+L\+::$\sim$\+D\+C\+EL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} object. 
+
+This function deletes the \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} data structure and all the dynamically allocated objects present in this structure. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_c_e_l_a147e5d98a0c1fbd02365c01c657a8baf}\label{class_d_c_e_l_a147e5d98a0c1fbd02365c01c657a8baf}} 
+\index{DCEL@{DCEL}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!DCEL@{DCEL}}
+\doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
+{\footnotesize\ttfamily void D\+C\+E\+L\+::add\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a new \mbox{\hyperlink{class_edge}{Edge}} to the existing \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} data structure. 
+
+This method dynamically creates two new \mbox{\hyperlink{class_half_edge}{Half\+Edge}} objects representing the input \mbox{\hyperlink{class_edge}{Edge}} and sets all their attributes respectly. This method takes care to also create and assign new Faces (if formed) automatically.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \mbox{\hyperlink{class_vertex}{Vertex}} endpoint of the edge to be added \\
+\hline
+{\em b} & \mbox{\hyperlink{class_vertex}{Vertex}} endpoint of the edge to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_d_c_e_l_a995b3719e2839a8b479d577ca7195c14}\label{class_d_c_e_l_a995b3719e2839a8b479d577ca7195c14}} 
+\index{DCEL@{DCEL}!addVertex@{addVertex}}
+\index{addVertex@{addVertex}!DCEL@{DCEL}}
+\doxysubsubsection{\texorpdfstring{addVertex()}{addVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vertex}{Vertex}}$\ast$ D\+C\+E\+L\+::add\+Vertex (\begin{DoxyParamCaption}\item[{long}]{x,  }\item[{long}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a new \mbox{\hyperlink{class_vertex}{Vertex}} object to the existing \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}}. 
+
+Overloaded version of \mbox{\hyperlink{class_d_c_e_l_ad94dbc6e2498140919af56d73c42f91d}{add\+Vertex()}} function which takes coordinates vertex. This method builds a new \mbox{\hyperlink{class_vertex}{Vertex}} object dynamically to store in \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x coordinate of the new vertex object \\
+\hline
+{\em y} & y coordinate of the new vertex object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertex$\ast$ pointer to the added object in the \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_d_c_e_l_ad94dbc6e2498140919af56d73c42f91d}\label{class_d_c_e_l_ad94dbc6e2498140919af56d73c42f91d}} 
+\index{DCEL@{DCEL}!addVertex@{addVertex}}
+\index{addVertex@{addVertex}!DCEL@{DCEL}}
+\doxysubsubsection{\texorpdfstring{addVertex()}{addVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vertex}{Vertex}}$\ast$ D\+C\+E\+L\+::add\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a new \mbox{\hyperlink{class_vertex}{Vertex}} object to the existing \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}}. 
+
+Addition of \mbox{\hyperlink{class_vertex}{Vertex}} is only done if there is no similar/equal vertex existing in \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Pointer to \mbox{\hyperlink{class_vertex}{Vertex}} object to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertex$\ast$ pointer to the added object in the \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_d_c_e_l_a0029c4806e99c6548cb928c93f97cff4}\label{class_d_c_e_l_a0029c4806e99c6548cb928c93f97cff4}} 
+\index{DCEL@{DCEL}!addVertex@{addVertex}}
+\index{addVertex@{addVertex}!DCEL@{DCEL}}
+\doxysubsubsection{\texorpdfstring{addVertex()}{addVertex()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vertex}{Vertex}}$\ast$ D\+C\+E\+L\+::add\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vertex}{Vertex}}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a new \mbox{\hyperlink{class_vertex}{Vertex}} object to the existing \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}}. 
+
+Overloaded version of \mbox{\hyperlink{class_d_c_e_l_ad94dbc6e2498140919af56d73c42f91d}{add\+Vertex()}} function which takes a \mbox{\hyperlink{class_vertex}{Vertex}} object instead of a pointer. This method builds a new \mbox{\hyperlink{class_vertex}{Vertex}} object dynamically to store in \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_vertex}{Vertex}} object to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertex$\ast$ pointer to the added object in the \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_d_c_e_l_aa422118ec64a42730c12a2a5a1c6763b}\label{class_d_c_e_l_aa422118ec64a42730c12a2a5a1c6763b}} 
+\index{DCEL@{DCEL}!getVertex@{getVertex}}
+\index{getVertex@{getVertex}!DCEL@{DCEL}}
+\doxysubsubsection{\texorpdfstring{getVertex()}{getVertex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_vertex}{Vertex}}$\ast$ D\+C\+E\+L\+::get\+Vertex (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vertex}{Vertex}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the pointer to \mbox{\hyperlink{class_vertex}{Vertex}} object which matches/equals the given vertex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & \mbox{\hyperlink{class_vertex}{Vertex}} object to which we need matching object in \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertex$\ast$ pointer to matching \mbox{\hyperlink{class_vertex}{Vertex}} object in \mbox{\hyperlink{class_d_c_e_l}{D\+C\+EL}}. Returns nullptr in case of no matching vertex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_d_c_e_l_a9e657ac5a900befb1b02d49a26347eec}\label{class_d_c_e_l_a9e657ac5a900befb1b02d49a26347eec}} 
+\index{DCEL@{DCEL}!printBoundaryEdges@{printBoundaryEdges}}
+\index{printBoundaryEdges@{printBoundaryEdges}!DCEL@{DCEL}}
+\doxysubsubsection{\texorpdfstring{printBoundaryEdges()}{printBoundaryEdges()}}
+{\footnotesize\ttfamily void D\+C\+E\+L\+::print\+Boundary\+Edges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_face}{Face}} $\ast$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Print the directional halfedges which surround the face. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Pointer to face object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_d_c_e_l_a7b78f6e67fde24dcfd176eec582ad232}\label{class_d_c_e_l_a7b78f6e67fde24dcfd176eec582ad232}} 
+\index{DCEL@{DCEL}!setFace@{setFace}}
+\index{setFace@{setFace}!DCEL@{DCEL}}
+\doxysubsubsection{\texorpdfstring{setFace()}{setFace()}}
+{\footnotesize\ttfamily void D\+C\+E\+L\+::set\+Face (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$\&}]{he }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set a new \mbox{\hyperlink{class_face}{Face}} object for the given \mbox{\hyperlink{class_half_edge}{Half\+Edge}}. 
+
+In case of new added Half\+Edges, this function creates a face, traverses all the connected half edges and assigns the new face to all of them. Make sure that the input halfedge has no face assigned, else it will be lost. This function assigns the input halfedge as the representative of the new face
+
+
+\begin{DoxyParams}{Parameters}
+{\em he} & \mbox{\hyperlink{class_half_edge}{Half\+Edge}} to which new face must be created ans assigned \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_d_c_e_l_a0dfce903b2956a78c6aa143a2226365f}\label{class_d_c_e_l_a0dfce903b2956a78c6aa143a2226365f}} 
+\index{DCEL@{DCEL}!faces@{faces}}
+\index{faces@{faces}!DCEL@{DCEL}}
+\doxysubsubsection{\texorpdfstring{faces}{faces}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_face}{Face}} $\ast$$>$ D\+C\+E\+L\+::faces}
+
+List of pointers to all abailable faces \mbox{\Hypertarget{class_d_c_e_l_a0b789983672e5bb796a5f7ca78ca777a}\label{class_d_c_e_l_a0b789983672e5bb796a5f7ca78ca777a}} 
+\index{DCEL@{DCEL}!heMap@{heMap}}
+\index{heMap@{heMap}!DCEL@{DCEL}}
+\doxysubsubsection{\texorpdfstring{heMap}{heMap}}
+{\footnotesize\ttfamily map$<$\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$, vector$<$\mbox{\hyperlink{class_half_edge}{Half\+Edge}} $\ast$$>$ $>$ D\+C\+E\+L\+::he\+Map}
+
+Hash Map to store list of \mbox{\hyperlink{class_half_edge}{Half\+Edge}} objects incident at each vertex \mbox{\Hypertarget{class_d_c_e_l_a6339be2488749b653dc02bab4c1e5655}\label{class_d_c_e_l_a6339be2488749b653dc02bab4c1e5655}} 
+\index{DCEL@{DCEL}!vertices@{vertices}}
+\index{vertices@{vertices}!DCEL@{DCEL}}
+\doxysubsubsection{\texorpdfstring{vertices}{vertices}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_vertex}{Vertex}} $\ast$$>$ D\+C\+E\+L\+::vertices}
+
+List of pointer to all available vertices 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+C\+E\+L.\+h\end{DoxyCompactItemize}
