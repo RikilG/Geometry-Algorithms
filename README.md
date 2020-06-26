@@ -13,7 +13,6 @@ Each algorithm is implemented seperately in its folder using C++ language.
 A README file in each folder describes how to run and other information about 
 that particular folder.
 
-------------------------------TODO: Update the tree structure---------------------------
 ```bash
 Algorithm Directory
 ├── datasets # folder containing datasets to be tested upon
@@ -22,43 +21,21 @@ Algorithm Directory
 └── README.md # a readme file describing the algo and how to run it
 ```
 
-## Convex Hull Algo based on Divide & Conquer (Tangent Approach)
+## Plotting Output
 
-- Implementation from David Mount lecture notes
-- **Tasks**:
-  - [x] verify algo by plotting or running on known points
-  - [x] run algo on huge datasets
-  - [x] code comments and documentation
-  - [x] performance analysis
+Each directory contains a `plot.py` python program which can be used to plot the
+output of each algorithm. output of algorithm can be directly piped to this program
+or given as command line argument
 
-## Implement DCEL
+```
+# do this in the src directory if program is compiled in the same directory
+# the text in the [] brackets is optional. if given, it prints the input dataset also
+./a.out ../datasets/data.txt | ../plot [-i ../datasets/data.txt]
 
-- **Tasks**:
-  - [x] Implement DCEL
-  - [ ] run algo on huge datasets
-  - [ ] code comments and documentation
-  - [ ] performance analysis
-
-## Polygon Triangulation
-
-- **Tasks**:
-  - [ ] compare the 2 different algorithms
-
-### Ear Splitting Approach
-
-- Starting point: Wikipedia
-- **Tasks**:
-  - [ ] run algo on huge datasets
-  - [ ] code comments and documentation
-  - [ ] performance analysis
-
-### Triangulation based on Monotone Polygons
-
-- David Mount notes
-- **Tasks**:
-  - [ ] run algo on huge datasets
-  - [ ] code comments and documentation
-  - [ ] performance analysis
+# without piping, save output to file and use it
+./a.out ../datasets/data.txt > output.txt
+../plot -o output.txt [-i ../datasets/data.txt]
+```
 
 ## References
 

@@ -33,7 +33,6 @@ The required input format for the algorithm to work correctly is:
 - Each of next line must contain 4 integers, space seperated denoting the (x1, y1), (x2, y2) coordinates of endpoints of each edge.
 - Each coordinate must be of integer type in the range -10^8 to 10^8.
 - Number of coordinates must be less than 1 Billion.
-- Please note that to get best results, please input points with the general point assumptions.
 
 ## Output
 
@@ -45,18 +44,12 @@ time taken by the algorithm to compute DCEL (also in microseconds).
 
 An example of output of dataset [random4.txt](./datasets/random4.txt):
 
-![DCEL_random](../Latex/img/DCELrandom.png){ width=8cm height=8cm }
-
-The `plot.py` file can be used to show the output of the algorithm. The method to use is given 
-in [README](../README.md) present in root directory
+![DCEL_random](img/DCELrandom.png){ width=8cm height=8cm }\
 
 ## Documentation and Report
 
-For the report, check the `Report` directory in the parent folder for pdf, markdown and 
-latex formats.
-
 Documentation of this algorithm, functions and classes can be found in the `docs` folder 
-in the current directory. Open the [index.html](./docs/html/index.html) file from the docs 
+in the current directory. Open the [index.html](../DCEL/docs/html/index.html) file from the docs 
 directory with your preferred browser to go through the documentation
 
 ## Performance Analysis
@@ -125,7 +118,7 @@ This algorithm to construct a DCEL takes time complexity of O(V+E). From the
 analysis of example dataset runtimes, we can easily see that increase in number 
 of vertices and edges directly leads to increase in DCEL construction time. 
 
-![DCEL_hyd_full](../Latex/img/DCELhyd4.png){ width=8cm height=8cm }
+![DCEL_hyd_full](img/DCELhyd4.png){ width=8cm height=8cm }\
 
 The output of the algorithm is direct traversal of representative edges of all
 faces present in the input. In the above example of Hyderabad road network dataset, 

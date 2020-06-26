@@ -33,10 +33,6 @@ The required file format for the algorithm to work correctly is:
 - Each coordinate must be of integer type in the range -10^6 to 10^6.
 - No of coordinates must be less than 1 Billion.
 - **Note**: while using floating point datasets, the output coordinates might slightly differ as given coordinates are stored as floats.
-- Please note that to get best results, please input points with the general point assumptions.
-
-The `randomPoints.py` file can be use to generate random point datasets. Generated files are 
-stored as text file in the datasets directory with the no of points as the file name
 
 ## Output
 
@@ -47,18 +43,12 @@ time taken by the algorithm to compute convex hull (also in microseconds).
 
 Example output: 
 
-![ConvexHull10](../Latex/img/CH10.png){ width=8cm height=8cm }
-
-The `plot.py` file can be used to show the output of the algorithm. The method to use is given 
-in [README](../README.md) present in root directory
+![ConvexHull10](img/CH10.png){ width=8cm height=8cm }\
 
 ## Documentation and Report
 
-For the report, check the `Report` directory in the parent folder for pdf, markdown and 
-latex formats.
-
 Documentation of this algorithm, functions and classes can be found in the `docs` folder 
-in the current directory. Open the [index.html](./docs/html/index.html) file from 
+in the current directory. Open the [index.html](../ConvexHull/docs/html/index.html) file from 
 the docs directory with your preferred browser to go through the documentation
 
 ## Performance Analysis
@@ -143,7 +133,7 @@ points of both hulls are catenated to get the upper hull.
 The following is the computed convex hull of the [parking_meter.txt](./datasets/parking_meter.txt)
 dataset:
 
-![ConvexHull_parking_meter](../Latex/img/CHparkingmeter.png){ width=8cm height=8cm }
+![ConvexHull_parking_meter](img/CHparkingmeter.png){ width=8cm height=8cm }\
 
 The red boundary in the above image represents the convex hull given as the output 
 by the program. The blue points are the inputs given to the program.
@@ -152,7 +142,7 @@ By analysis of the above divide and conquer algorithm, It can be concluded that 
 algorithm runs in O(n log n) time complexity. From the above results of testing of various
 datasets, we can see that the time increase is proportional to the no of points. 
 
-![ConvexHull_radial](../Latex/img/CHradial.png){ width=8cm height=8cm }
+![ConvexHull_radial](img/CHradial.png){ width=8cm height=8cm }\
 
 The dataset [radial.txt](./datasets/radial.txt) is a hand-crafted dataset (3K points) 
 which has high concentration of points (~2.1K) in the center, whereas other randomly 

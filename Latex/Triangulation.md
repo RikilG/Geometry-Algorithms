@@ -34,7 +34,6 @@ The required file format for the algorithm to work correctly is:
 - Each of next line must contain 2 integers, space seperated denoting the (x, y) coordinates of each point.
 - Each coordinate must be of integer type in the range -10^8 to 10^8.
 - No of coordinates must be less than 1 Billion.
-- Please note that to get best results, please input points with the general point assumptions.
 
 ## Output
 
@@ -44,18 +43,12 @@ time taken by the algorithm to compute Triangulation (also in microseconds).
 
 This is the output of one of the datasets [long.txt](./datasets/long.txt)
 
-![Triangulated_snake](../Latex/img/TRIsnake.png){ width=8cm height=8cm }
-
-The `plot.py` file can be used to show the output of the algorithm. The method to use is given 
-in [README](../README.md) present in root directory
+![Triangulated_snake](img/TRIsnake.png){ width=8cm height=8cm }\
 
 ## Documentation and Report
 
-For the report, check the `Report` directory in the parent folder for pdf, markdown and 
-latex formats.
-
 Documentation of this algorithm, functions and classes can be found in the `docs` folder 
-in the current directory. Open the [index.html](./docs/html/index.html) file from the 
+in the current directory. Open the [index.html](../Triangulation/docs/html/index.html) file from the 
 docs directory with your preferred browser to go through the documentation
 
 ## Performance Analysis
@@ -118,7 +111,7 @@ triangulate a planar subdivision with in O(n log n) time using O(n) space.
 
 ## Results
 
-![Triangulate_tank](../Latex/img/TRItank.png){ width=8cm height=8cm }\
+![Triangulate_tank](img/TRItank.png){ width=8cm height=8cm }\
 
 In the above image, the red boundary represents the input given to the algorithm
 and the random colored triangle represent the output given by the program.
